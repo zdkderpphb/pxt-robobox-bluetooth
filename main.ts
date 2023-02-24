@@ -206,7 +206,7 @@ namespace robotbit {
     //% blockId=robotbit_Beebot_vor block="Vorwärts |Dauer %delay|s"
     //% group="Beebot" weight=58
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    //% advanced=true
+    //% subcategory="Easy" weight=90
     export function BeeVor(delay: number): void {
         MotorRun(0x1, 150);
         MotorRun(0x2, 150);
