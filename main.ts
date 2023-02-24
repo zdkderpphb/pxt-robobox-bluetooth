@@ -203,7 +203,7 @@ namespace robotbit {
 
         return neoStrip;
     }
-    //% blockId=robotbit_Beebot_vor block="Vorwärts |delay %delay|s"
+    //% blockId=robotbit_Beebot_vor block="Vorwärts |Dauer %delay|s"
     //% group="Beebot" weight=58
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     export function BeeVor(delay: number): void {
