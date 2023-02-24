@@ -203,10 +203,10 @@ namespace robotbit {
 
         return neoStrip;
     }
-    //% blockId=robotbit_Beebot_vor block="Vorwärts"
+    //% blockId=robotbit_Beebot_vor block="Vorwärts |delay %delay|s"
     //% group="Beebot" weight=58
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    export function BeeVor(): void {
+    export function BeeVor(delay: number): void {
         MotorRun(0x1, 150);
         MotorRun(0x2, 150);
         MotorRun(0x3, 150);
