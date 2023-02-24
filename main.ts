@@ -6,7 +6,7 @@ load dependency
 */
 
 
-//% color="#31C7D5" weight=10 icon="\uf1d0"
+//% color="#63AEE6" weight=10 icon="\f19d"
 namespace Robobox {
     const PCA9685_ADDRESS = 0x40
     const MODE1 = 0x00
