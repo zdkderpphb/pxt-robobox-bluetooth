@@ -203,16 +203,52 @@ namespace Robobox {
 
         return neoStrip;
     }
-    //% blockId=robotbit_Beebot_vor block="Vorwärts |Dauer %delay|s"
+    //% blockId=robotbit_Beebot_vor block="vorwärts |Dauer %delay|s"
     //% group="Beebot" weight=58
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    //% subcategory="Easy" weight=90
+    //% subcategory="Basic" weight=90
     export function BeeVor(delay: number): void {
         MotorRun(0x1, 150);
         MotorRun(0x2, 150);
         MotorRun(0x3, 150);
         MotorRun(0x4, 150);
-        basic.pause(1000);
+        basic.pause(delay);
+        MotorStopAll()
+    }
+    //% blockId=robotbit_Beebot_zur block="rückwärts |Dauer %delay|s"
+    //% group="Beebot" weight=58
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    //% subcategory="Basic" weight=90
+    export function BeeZur(delay: number): void {
+        MotorRun(0x1, -150);
+        MotorRun(0x2, -150);
+        MotorRun(0x3, -150);
+        MotorRun(0x4, -150);
+        basic.pause(delay);
+        MotorStopAll()
+    }
+     //% blockId=robotbit_Beebot_links block="links |Dauer %delay|s"
+    //% group="Beebot" weight=58
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    //% subcategory="Basic" weight=90
+    export function BeeLinks(delay: number): void {
+        MotorRun(0x1, 150);
+        MotorRun(0x2, 150);
+        MotorRun(0x3, -150);
+        MotorRun(0x4, -150);
+        basic.pause(delay);
+        MotorStopAll()
+    }
+    //% blockId=robotbit_Beebot_rechts block="rechts |Dauer %delay|s"
+    //% group="Beebot" weight=58
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    //% subcategory="Basic" weight=90
+    export function BeeRechts(delay: number): void {
+        MotorRun(0x1, -150);
+        MotorRun(0x2, -150);
+        MotorRun(0x3, 150);
+        MotorRun(0x4, 150);
+        basic.pause(delay);
         MotorStopAll()
     }
     /**
