@@ -213,10 +213,10 @@ namespace Robobox {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% subcategory="Basic" weight=90
     export function BeeVor(delay: number): void {
-        MotorRun(0x1, 150);
-        MotorRun(0x2, 150);
-        MotorRun(0x3, 150);
-        MotorRun(0x4, 150);
+        MotorRun(0x1, 200);
+        MotorRun(0x2, 200);
+        MotorRun(0x3, 200);
+        MotorRun(0x4, 200);
         basic.pause(delay);
         MotorStopAll()
     }
@@ -225,10 +225,10 @@ namespace Robobox {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% subcategory="Basic" weight=90
     export function BeeZur(delay: number): void {
-        MotorRun(0x1, -150);
-        MotorRun(0x2, -150);
-        MotorRun(0x3, -150);
-        MotorRun(0x4, -150);
+        MotorRun(0x1, -200);
+        MotorRun(0x2, -200);
+        MotorRun(0x3, -200);
+        MotorRun(0x4, -200);
         basic.pause(delay);
         MotorStopAll()
     }
@@ -237,10 +237,10 @@ namespace Robobox {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% subcategory="Basic" weight=90
     export function BeeLinks(delay: number): void {
-        MotorRun(0x1, 150);
-        MotorRun(0x2, 150);
-        MotorRun(0x3, -150);
-        MotorRun(0x4, -150);
+        MotorRun(0x1, 200);
+        MotorRun(0x2, 200);
+        MotorRun(0x3, -200);
+        MotorRun(0x4, -200);
         basic.pause(delay);
         MotorStopAll()
     }
@@ -249,10 +249,10 @@ namespace Robobox {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% subcategory="Basic" weight=90
     export function BeeRechts(delay: number): void {
-        MotorRun(0x1, -150);
-        MotorRun(0x2, -150);
-        MotorRun(0x3, 150);
-        MotorRun(0x4, 150);
+        MotorRun(0x1, -200);
+        MotorRun(0x2, -200);
+        MotorRun(0x3, 200);
+        MotorRun(0x4, 200);
         basic.pause(delay);
         MotorStopAll()
     }
