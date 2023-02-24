@@ -203,7 +203,17 @@ namespace robotbit {
 
         return neoStrip;
     }
-
+    //% blockId=robotbit_Beebot_vor block="Vorwärts"
+    //% group="Beebot" weight=58
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    export function BeeVor(): void {
+        MotorRun(0x1, 150);
+        MotorRun(0x2, 150);
+        MotorRun(0x3, 150);
+        MotorRun(0x4, 150);
+        basic.pause(1000);
+        MotorStopAll()
+    }
     /**
      * Servo Execute
      * @param index Servo Channel; eg: S1
@@ -352,17 +362,7 @@ namespace robotbit {
         MotorRun(motor2, speed2);
     }
 
-    //% blockId=robotbit_Beebot_vor block="Vorwärts"
-    //% group="Beebot" weight=58
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    export function BeeVor(): void {
-        MotorRun(0x1, 150);
-        MotorRun(0x2, 150);
-        MotorRun(0x3, 150);
-        MotorRun(0x4, 150);
-        basic.pause(1000);
-        MotorStopAll()
-    }
+   
 
 
 
