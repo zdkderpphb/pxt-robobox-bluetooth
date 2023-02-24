@@ -1,6 +1,6 @@
 {
-    "name": "pxt-robobox",
-    "description": "",
+    "name": "Robobox",
+    "description": "Erweiterung für die Robobox",
     "dependencies": {
         "core": "*",
         "radio": "*",
