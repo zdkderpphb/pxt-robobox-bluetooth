@@ -203,7 +203,7 @@ namespace Robobox {
 
         return neoStrip;
     }
-    //% blockId=robotbit_Beebot_vor block="vorwärts |Dauer %delay|s"
+    //% blockId=robotbit_Beebot_vor block="vorwärts |Dauer %delay|Millisekunden"
     //% group="Beebot" weight=58
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% subcategory="Basic" weight=90
@@ -215,7 +215,7 @@ namespace Robobox {
         basic.pause(delay);
         MotorStopAll()
     }
-    //% blockId=robotbit_Beebot_zur block="rückwärts |Dauer %delay|s"
+    //% blockId=robotbit_Beebot_zur block="rückwärts |Dauer %delay|Millisekunden"
     //% group="Beebot" weight=58
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% subcategory="Basic" weight=90
@@ -227,7 +227,7 @@ namespace Robobox {
         basic.pause(delay);
         MotorStopAll()
     }
-     //% blockId=robotbit_Beebot_links block="links |Dauer %delay|s"
+     //% blockId=robotbit_Beebot_links block="links |Dauer %delay|Millisekunden"
     //% group="Beebot" weight=58
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% subcategory="Basic" weight=90
@@ -239,7 +239,7 @@ namespace Robobox {
         basic.pause(delay);
         MotorStopAll()
     }
-    //% blockId=robotbit_Beebot_rechts block="rechts |Dauer %delay|s"
+    //% blockId=robotbit_Beebot_rechts block="rechts |Dauer %delay|Millisekunden"
     //% group="Beebot" weight=58
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% subcategory="Basic" weight=90
