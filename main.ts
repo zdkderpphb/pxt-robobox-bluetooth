@@ -204,7 +204,7 @@ namespace Robobox {
         return neoStrip;
     }
     //% blockId=robotbit_Beebot_vor block="vorwärts |Dauer %delay|Millisekunden"
-    //% group="Beebot" weight=58
+    //% group="Beebot" weight=54
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% subcategory="Basic" weight=90
     export function BeeVor(delay: number): void {
@@ -216,7 +216,7 @@ namespace Robobox {
         MotorStopAll()
     }
     //% blockId=robotbit_Beebot_zur block="rückwärts |Dauer %delay|Millisekunden"
-    //% group="Beebot" weight=58
+    //% group="Beebot" weight=55
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% subcategory="Basic" weight=90
     export function BeeZur(delay: number): void {
@@ -228,7 +228,7 @@ namespace Robobox {
         MotorStopAll()
     }
      //% blockId=robotbit_Beebot_links block="links |Dauer %delay|Millisekunden"
-    //% group="Beebot" weight=58
+    //% group="Beebot" weight=56
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% subcategory="Basic" weight=90
     export function BeeLinks(delay: number): void {
@@ -240,7 +240,7 @@ namespace Robobox {
         MotorStopAll()
     }
     //% blockId=robotbit_Beebot_rechts block="rechts |Dauer %delay|Millisekunden"
-    //% group="Beebot" weight=58
+    //% group="Beebot" weight=57
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% subcategory="Basic" weight=90
     export function BeeRechts(delay: number): void {
@@ -260,6 +260,7 @@ namespace Robobox {
     //% group="Servo" weight=62
     //% degree.min=0 degree.max=180
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+     //% subcategory="RoboterArm" weight=90
     export function Servo(index: Servos, degree: number): void {
         if (!initialized) {
             initPCA9685()
@@ -273,6 +274,7 @@ namespace Robobox {
 
     //% blockId=robotbit_stepper_degree block="Stepper 28BYJ-48|%index|degree %degree"
     //% group="Motor" weight=54
+    //% subcategory="RoboterArm" weight=90
     export function StepperDegree(index: Steppers, degree: number): void {
         if (!initialized) {
             initPCA9685()
@@ -286,6 +288,7 @@ namespace Robobox {
 
     //% blockId=robotbit_stepper_turn block="Stepper 28BYJ-48|%index|turn %turn"
     //% group="Motor" weight=53
+    //% subcategory="RoboterArm" weight=90
     export function StepperTurn(index: Steppers, turn: Turns): void {
         let degree = turn;
         StepperDegree(index, degree);
@@ -293,6 +296,7 @@ namespace Robobox {
 
     //% blockId=robotbit_stepper_dual block="Dual Stepper(Degree) |M1 %degree1| M2 %degree2"
     //% group="Motor" weight=52
+    //% subcategory="RoboterArm" weight=90
     export function StepperDual(degree1: number, degree2: number): void {
         if (!initialized) {
             initPCA9685()
@@ -320,6 +324,7 @@ namespace Robobox {
     */
     //% blockId=robotbit_stpcar_move block="Car Forward|Distance(cm) %distance|Wheel Diameter(mm) %diameter"
     //% group="Motor" weight=51
+    //% subcategory="RoboterArm" weight=90
     export function StpCarMove(distance: number, diameter: number): void {
         if (!initialized) {
             initPCA9685()
@@ -341,6 +346,7 @@ namespace Robobox {
     //% blockId=robotbit_stpcar_turn block="Car Turn|Degree %turn|Wheel Diameter(mm) %diameter|Track(mm) %track"
     //% group="Motor" weight=50
     //% blockGap=50
+    //% subcategory="RoboterArm" weight=90
     export function StpCarTurn(turn: number, diameter: number, track: number): void {
         if (!initialized) {
             initPCA9685()
@@ -357,6 +363,7 @@ namespace Robobox {
     //% group="Motor" weight=59
     //% speed.min=-255 speed.max=255
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    //% subcategory="Auto" weight=90
     export function MotorRun(index: Motors, speed: number): void {
         if (!initialized) {
             initPCA9685()
@@ -394,6 +401,8 @@ namespace Robobox {
     //% speed1.min=-255 speed1.max=255
     //% speed2.min=-255 speed2.max=255
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    //% subcategory="Auto" weight=90
+    
     export function MotorRunDual(motor1: Motors, speed1: number, motor2: Motors, speed2: number): void {
         MotorRun(motor1, speed1);
         MotorRun(motor2, speed2);
@@ -414,6 +423,7 @@ namespace Robobox {
     //% group="Motor" weight=57
     //% speed.min=-255 speed.max=255
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    //% subcategory="Auto" weight=90
     export function MotorRunDelay(index: Motors, speed: number, delay: number): void {
         MotorRun(index, speed);
         basic.pause(delay * 1000);
@@ -424,6 +434,7 @@ namespace Robobox {
 
     //% blockId=robotbit_stop block="Motor Stop|%index|"
     //% group="Motor" weight=56
+    //% subcategory="Auto" weight=90
     export function MotorStop(index: Motors): void {
         MotorRun(index, 0);
     }
@@ -431,6 +442,7 @@ namespace Robobox {
     //% blockId=robotbit_stop_all block="Motor Stop All"
     //% group="Motor" weight=55
     //% blockGap=50
+    //% subcategory="Auto" weight=90
     export function MotorStopAll(): void {
         if (!initialized) {
             initPCA9685()
