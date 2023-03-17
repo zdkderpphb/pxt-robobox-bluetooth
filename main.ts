@@ -209,11 +209,11 @@ namespace Robobox {
         return neoStrip;
   }
   
-  /*#############################################################################BEEBOT START###############################################*/
+  /*#############################################################################Basic START###############################################*/
 //% blockId=robotbit_Beebot_rechts block="rechts |Dauer %delay|Millisekunden"
-  //% group="Beebot" weight=1
+  //% group="Linea/Manuva" weight=1
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-  //% subcategory="Basic" weight=90
+  //% subcategory="Fahren Basic" weight=90
   export function BeeRechts(delay: number): void {
     MotorRun(0x1, -200);
     MotorRun(0x2, -200);
@@ -223,9 +223,9 @@ namespace Robobox {
     MotorStopAll()
   }
 //% blockId=robotbit_Beebot_links block="links |Dauer %delay|Millisekunden"
-  //% group="Beebot" weight=2
+  //% group="Linea/Manuva" weight=2
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-  //% subcategory="Basic" weight=90
+  //% subcategory="Fahren Basic" weight=90
   export function BeeLinks(delay: number): void {
     MotorRun(0x1, 200);
     MotorRun(0x2, 200);
@@ -235,9 +235,9 @@ namespace Robobox {
     MotorStopAll()
 }
   //% blockId=robotbit_Beebot_zur block="rückwärts |Dauer %delay|Millisekunden"
-  //% group="Beebot" weight=3
+  //% group="Linea/Manuva" weight=3
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-  //% subcategory="Basic" weight=90
+  //% subcategory="Fahren Basic" weight=90
   export function BeeZur(delay: number): void {
       MotorRun(0x1, -200);
       MotorRun(0x2, -200);
@@ -247,9 +247,9 @@ namespace Robobox {
       MotorStopAll()
   }
 //% blockId=robotbit_Beebot_vor block="vorwärts |Dauer %delay|Millisekunden"
-    //% group="Beebot" weight=4
+    //% group="Linea/Manuva" weight=4
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    //% subcategory="Basic" weight=90
+    //% subcategory="Fahren Basic" weight=90
     export function BeeVor(delay: number): void {
       MotorRun(0x1, 200);
       MotorRun(0x2, 200);
@@ -258,9 +258,50 @@ namespace Robobox {
       basic.pause(delay);
       MotorStopAll()
   }
-   
   
-  /*#############################################################################BEEBOT ENDE###############################################*/
+   //% blockId=robotbit_Manuva_linksvordiag block="Diagonal Links Vor |Dauer %delay|Millisekunden"
+    //% group="Manuva" weight=110
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    //% subcategory="Fahren Basic" weight=110
+    export function Manuvalvd(delay: number): void {
+      MotorRun(0x1, 200);
+      MotorRun(0x4, 200);
+      basic.pause(delay);
+      MotorStopAll()
+  }
+   //% blockId=robotbit_Manuva_rechtsvordiag block="Diagonal Rechts Vor |Dauer %delay|Millisekunden"
+  //% group="Manuva" weight=110
+  //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+  //% subcategory="Fahren Basic" weight=110
+  export function Manuvarvd(delay: number): void {
+      MotorRun(0x2, 200);
+      MotorRun(0x3, 200);
+      basic.pause(delay);
+      MotorStopAll()
+  }
+   //% blockId=robotbit_Manuva_linksrueckdiag block="Diagonal Links Zurück |Dauer %delay|Millisekunden"
+  //% group="Manuva" weight=110
+  //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+  //% subcategory="Fahren Basic" weight=110
+  export function Manuvalrd(delay: number): void {
+      MotorRun(0x2, -200);
+      MotorRun(0x3, -200);
+      basic.pause(delay);
+      MotorStopAll()
+  }
+   //% blockId=robotbit_Manuva_rechtsrueckdiag block="Diagonal Rechts Zurück |Dauer %delay|Millisekunden"
+  //% group="Manuva" weight=110
+  //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+  //% subcategory="Fahren Basic" weight=110
+  export function Manuvarrd(delay: number): void {
+      MotorRun(0x1, -200);
+      MotorRun(0x4, -200);
+      basic.pause(delay);
+      MotorStopAll()
+  }
+ 
+  
+  /*#############################################################################Basic ENDE###############################################*/
   
     function triggerPulse() {
       // Reset trigger pin
