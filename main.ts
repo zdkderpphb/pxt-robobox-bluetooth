@@ -362,7 +362,7 @@ namespace Robobox {
    * @param speed [-255-255] speed of motor; eg: 150, -150
    * @param delay seconde delay to stop; eg: 1
   */
-  //% blockId=robotbit_motor_rundelay block="Motor|%index|Geschwindigkeit %speed|Verzögerung %delay|Milisekunden"
+  //% blockId=robotbit_motor_rundelay block="Motor|%index|Geschwindigkeit %speed|Dauer %delay|Milisekunden"
   //% group="Motor" weight=105
   //% speed.min=-255 speed.max=255
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
