@@ -308,9 +308,9 @@ namespace Robobox {
 
   
     //% blockId=robotbit_motor_run block="Motor|%index|Geschwindigkeit %speed"
-    //% group="Motor" weight=105
+    //% group="Motor" weight=120
     //% speed.min=-255 speed.max=255
-    //% subcategory="Fahren Advanced" weight=105
+    //% subcategory="Fahren Advanced" weight=120
     export function MotorRun(index: Motors, speed: number): void {
       if (!initialized) {
           initPCA9685()
@@ -344,10 +344,10 @@ namespace Robobox {
    * @param speed2 [-255-255] speed of motor; eg: 150, -150
   */
   //% blockId=robotbit_motor_dual block="Motor|%motor1|Geschwindigkeit %speed1|%motor2|Geschwindigkeit %speed2"
-  //% group="Motor" weight=105
+  //% group="Motor" weight=120
   //% speed1.min=-255 speed1.max=255
   //% speed2.min=-255 speed2.max=255
-  //% subcategory="Fahren Advanced" weight=105
+  //% subcategory="Fahren Advanced" weight=120
   
   export function MotorRunDual(motor1: Motors, speed1: number, motor2: Motors, speed2: number): void {
       MotorRun(motor1, speed1);
@@ -360,11 +360,11 @@ namespace Robobox {
    * @param speed [-255-255] speed of motor; eg: 150, -150
    * @param delay seconde delay to stop; eg: 1
   */
-  //% blockId=robotbit_motor_rundelay block="Motor|%index|Geschwindigkeit %speed|Dauer %delay|Milisekunden"
-  //% group="Motor" weight=105
+  //% blockId=robotbit_motor_rundelay block="Motor|%index|Geschwindigkeit %speed|Dauer %delay|Millisekunden"
+  //% group="Motor" weight=120
   //%blockGap=8
   //% speed.min=-255 speed.max=255
-  //% subcategory="Fahren Advanced" weight=105
+  //% subcategory="Fahren Advanced" weight=120
   export function MotorRunDelay(index: Motors, speed: number, delay: number): void {
       MotorRun(index, speed);
       basic.pause(delay);
@@ -374,16 +374,16 @@ namespace Robobox {
 
 
   //% blockId=robotbit_stop block="Motor stoppen|%index|"
-  //% group="Motor" weight=105
-  //% subcategory="Fahren Advanced" weight=105
+  //% group="Motor" weight=120
+  //% subcategory="Fahren Advanced" weight=120
   export function MotorStop(index: Motors): void {
       MotorRun(index, 0);
   }
 
   //% blockId=robotbit_stop_all block="Alle Motoren stoppen"
-  //% group="Motor" weight=105
+  //% group="Motor" weight=120
   //% blockGap=50
-  //% subcategory="Fahren Advanced" weight=105
+  //% subcategory="Fahren Advanced" weight=120
   export function MotorStopAll(): void {
       if (!initialized) {
           initPCA9685()
