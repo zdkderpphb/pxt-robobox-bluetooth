@@ -367,7 +367,7 @@ namespace Robobox {
   //% subcategory="Fahren Advanced" weight=120
   export function MotorRunDelay(index: Motors, speed: number, delay: number): void {
       MotorRun(index, speed);
-      basic.pause(delay);
+      basic.pause(delay); 
       MotorRun(index, 0);
   }
 
