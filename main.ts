@@ -263,7 +263,7 @@ namespace Robobox {
      * @param degree [0-180] degree of servo; eg: 0, 90, 180
     */
     //% blockId=robotbit_stift_rauf block="Stift rauf|%index"
-    //% group="Linea" weight=89
+    //% group="Linea" weight=100
     //% degree.min=0 degree.max=180
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
      //% subcategory="Linea" weight=100
@@ -282,7 +282,7 @@ namespace Robobox {
      * @param degree [0-180] degree of servo; eg: 0, 90, 180
     */
     //% blockId=robotbit_stift_runter block="Stift runter|%index"
-    //% group="Linea" weight=10
+    //% group="Linea" weight=100
     //% degree.min=0 degree.max=180
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
      //% subcategory="Linea" weight=100
@@ -294,6 +294,65 @@ namespace Robobox {
         let v_us = (90 * 1800 / 180 + 600) // 0.6 ~ 2.4
         let value = v_us * 4096 / 20000
         setPwm(index + 7, 0, value)
+    }
+    
+    //% blockId=robotbit_manuva_rechts block="rechts |Dauer %delay|Millisekunden"
+    //% group="Manuva" weight=110
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    //% subcategory="Manuva" weight=110
+    export function BeeRechts(delay: number): void {
+        MotorRun(0x1, -200);
+        MotorRun(0x2, -200);
+        MotorRun(0x3, 200);
+        MotorRun(0x4, 200);
+        basic.pause(delay);
+        MotorStopAll()
+    }
+    //% blockId=robotbit_Manuva_vor block="vorwärts |Dauer %delay|Millisekunden"
+    //% group="Manuva" weight=110
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    //% subcategory="Manuva" weight=110
+    export function Manuva(delay: number): void {
+        MotorRun(0x1, 200);
+        MotorRun(0x2, 200);
+        MotorRun(0x3, 200);
+        MotorRun(0x4, 200);
+        basic.pause(delay);
+        MotorStopAll()
+    }
+    //% blockId=robotbit_manuva_zur block="rückwärts |Dauer %delay|Millisekunden"
+    //% group="Manuva" weight=110
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    //% subcategory="Manuva" weight=110
+    export function ManuvaZur(delay: number): void {
+        MotorRun(0x1, -200);
+        MotorRun(0x2, -200);
+        MotorRun(0x3, -200);
+        MotorRun(0x4, -200);
+        basic.pause(delay);
+        MotorStopAll()
+    }
+     //% blockId=robotbit_Manuva_links block="links |Dauer %delay|Millisekunden"
+    //% group="Manuva" weight=110
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    //% subcategory="Manuva" weight=110
+    export function ManuvaLinks(delay: number): void {
+        MotorRun(0x1, 200);
+        MotorRun(0x2, 200);
+        MotorRun(0x3, -200);
+        MotorRun(0x4, -200);
+        basic.pause(delay);
+        MotorStopAll()
+    }
+      //% blockId=robotbit_Manuva_rechtsvordiag block="Diagonal Rechts Vor |Dauer %delay|Millisekunden"
+    //% group="Manuva" weight=110
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    //% subcategory="Manuva" weight=110
+    export function ManuvaLinks(delay: number): void {
+        MotorRun(0x1, 200);
+        MotorRun(0x4, 200);
+        basic.pause(delay);
+        MotorStopAll()
     }
     
     
