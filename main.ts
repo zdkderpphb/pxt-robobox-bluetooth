@@ -460,7 +460,7 @@ namespace Robobox {
 
 
   //% blockId=robotbit_stepper_degree block="Schrittmotor 28BYJ-48|%index|Grad %degree"
-  //% group="Motor" weight=90
+  //% group="Schrittmotor" weight=90
   //% subcategory="RoboterArm" weight=90
   export function StepperDegree(index: Steppers, degree: number): void {
       if (!initialized) {
@@ -474,7 +474,7 @@ namespace Robobox {
 
 
   //% blockId=robotbit_stepper_turn block="Schrittmotor 28BYJ-48|%index|drehe %turn"
-  //% group="Motor" weight=90
+  //% group="Schrittmotor" weight=90
   //% subcategory="RoboterArm" weight=90
   export function StepperTurn(index: Steppers, turn: Turns): void {
       let degree = turn;
