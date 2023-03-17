@@ -300,7 +300,7 @@ namespace Robobox {
     //% group="Manuva" weight=110
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% subcategory="Manuva" weight=110
-    export function BeeRechts(delay: number): void {
+    export function ManuvaRechts(delay: number): void {
         MotorRun(0x1, -200);
         MotorRun(0x2, -200);
         MotorRun(0x3, 200);
@@ -312,7 +312,7 @@ namespace Robobox {
     //% group="Manuva" weight=110
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% subcategory="Manuva" weight=110
-    export function Manuva(delay: number): void {
+    export function ManuvaVor(delay: number): void {
         MotorRun(0x1, 200);
         MotorRun(0x2, 200);
         MotorRun(0x3, 200);
@@ -348,7 +348,7 @@ namespace Robobox {
     //% group="Manuva" weight=110
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% subcategory="Manuva" weight=110
-    export function ManuvaLinks(delay: number): void {
+    export function Manuvarvd(delay: number): void {
         MotorRun(0x1, 200);
         MotorRun(0x4, 200);
         basic.pause(delay);
