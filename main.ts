@@ -310,7 +310,6 @@ namespace Robobox {
     //% blockId=robotbit_motor_run block="Motor|%index|Geschwindigkeit %speed"
     //% group="Motor" weight=105
     //% speed.min=-255 speed.max=255
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% subcategory="Fahren Advanced" weight=105
     export function MotorRun(index: Motors, speed: number): void {
       if (!initialized) {
@@ -348,7 +347,6 @@ namespace Robobox {
   //% group="Motor" weight=105
   //% speed1.min=-255 speed1.max=255
   //% speed2.min=-255 speed2.max=255
-  //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Advanced" weight=105
   
   export function MotorRunDual(motor1: Motors, speed1: number, motor2: Motors, speed2: number): void {
@@ -365,7 +363,6 @@ namespace Robobox {
   //% blockId=robotbit_motor_rundelay block="Motor|%index|Geschwindigkeit %speed|Dauer %delay|Milisekunden"
   //% group="Motor" weight=105
   //% speed.min=-255 speed.max=255
-  //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Advanced" weight=105
   export function MotorRunDelay(index: Motors, speed: number, delay: number): void {
       MotorRun(index, speed);
