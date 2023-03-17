@@ -344,13 +344,23 @@ namespace Robobox {
         basic.pause(delay);
         MotorStopAll()
     }
-      //% blockId=robotbit_Manuva_rechtsvordiag block="Diagonal Rechts Vor |Dauer %delay|Millisekunden"
+      //% blockId=robotbit_Manuva_linksvordiag block="Diagonal Links Vor |Dauer %delay|Millisekunden"
+    //% group="Manuva" weight=110
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    //% subcategory="Manuva" weight=110
+    export function Manuvalvd(delay: number): void {
+        MotorRun(0x1, 200);
+        MotorRun(0x4, 200);
+        basic.pause(delay);
+        MotorStopAll()
+    }
+     //% blockId=robotbit_Manuva_rechtsvordiag block="Diagonal Rechts Vor |Dauer %delay|Millisekunden"
     //% group="Manuva" weight=110
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% subcategory="Manuva" weight=110
     export function Manuvarvd(delay: number): void {
-        MotorRun(0x1, 200);
-        MotorRun(0x4, 200);
+        MotorRun(0x2, 200);
+        MotorRun(0x3, 200);
         basic.pause(delay);
         MotorStopAll()
     }
