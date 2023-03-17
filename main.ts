@@ -511,7 +511,7 @@ let ultrasonicState: UltrasonicDevice;
  */
 //% subcategory="Abstandssensor"
 //% blockId="makerbit_ultrasonic_connect"
-//% block="Verbinde Abstandssensor | mit Trig at %trig | und Echo at %echo"
+//% block="Verbinde Abstandssensor | mit Trig an %trig | und Echo an %echo"
 //% trig.fieldEditor="gridpicker"
 //% trig.fieldOptions.columns=4
 //% trig.fieldOptions.tooltips="false"
@@ -602,7 +602,7 @@ export function onUltrasonicObjectDetected(
  */
 //% subcategory="Abstandssensor"
 //% blockId="makerbit_ultrasonic_distance"
-//% block="ultrasonic distance in %unit"
+//% block="Abstand in %unit"
 //% weight=60
 export function getUltrasonicDistance(unit: DistanceUnit): number {
   if (!ultrasonicState) {
