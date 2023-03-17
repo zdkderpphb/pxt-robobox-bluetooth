@@ -285,7 +285,7 @@ namespace Robobox {
     //% group="Linea" weight=10
     //% degree.min=0 degree.max=180
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-     //% subcategory="Linea" weight=90
+     //% subcategory="Linea" weight=10
     export function Stift_runter(index: Servos): void {
         if (!initialized) {
             initPCA9685()
