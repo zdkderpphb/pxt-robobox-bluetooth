@@ -343,7 +343,55 @@ namespace Robobox {
       let value = v_us * 4096 / 20000
       setPwm(index + 7, 0, value)
   }
-/*#############################################################################Stift ENDE###############################################*/
+  /*#############################################################################Stift ENDE###############################################*/
+  
+      
+ /*#############################################################################Roboterarm Anfang###############################################*/      
+    
+    /**
+     * Servo Execute
+     * @param index Servo Channel; eg: S1
+     * @param degree [0-180] degree of servo; eg: 0, 90, 180
+    */
+    //% blockId=robotbit_servo block="Servo|%index|degree %degree"
+    //% group="Servo" weight=62
+    //% degree.min=0 degree.max=180
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+     //% subcategory="RoboterArm" weight=90
+     export function Servo(index: Servos, degree: number): void {
+      if (!initialized) {
+          initPCA9685()
+      }
+      // 50hz: 20,000 us
+      let v_us = (degree * 1800 / 180 + 600) // 0.6 ~ 2.4
+      let value = v_us * 4096 / 20000
+      setPwm(index + 7, 0, value)
+  }
+
+
+  //% blockId=robotbit_stepper_degree block="Schrittmotor 28BYJ-48|%index|degree %degree"
+  //% group="Motor" weight=54
+  //% subcategory="RoboterArm" weight=90
+  export function StepperDegree(index: Steppers, degree: number): void {
+      if (!initialized) {
+          initPCA9685()
+      }
+      setStepper(index, degree > 0);
+      degree = Math.abs(degree);
+      basic.pause(10240 * degree / 360);
+      MotorStopAll()
+  }
+
+
+  //% blockId=robotbit_stepper_turn block="Schrittmotor 28BYJ-48|%index|turn %turn"
+  //% group="Motor" weight=53
+  //% subcategory="RoboterArm" weight=90
+  export function StepperTurn(index: Steppers, turn: Turns): void {
+      let degree = turn;
+      StepperDegree(index, degree);
+  }
+
+  /*#############################################################################Roboterarm Ende###############################################*/   
   
     function triggerPulse() {
       // Reset trigger pin
