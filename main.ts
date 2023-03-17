@@ -256,6 +256,28 @@ namespace Robobox {
         basic.pause(delay);
         MotorStopAll()
     }
+    
+    /**
+     * Stift Execute
+     * @param index Servo Channel; eg: S1
+     * @param degree [0-180] degree of servo; eg: 0, 90, 180
+    */
+    //% blockId=robotbit_servo block="Stift rauf"
+    //% group="Linea" weight=62
+    //% degree.min=0 degree.max=180
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+     //% subcategory="Linea" weight=90
+    export function Stift(index: Servos, degree: number): void {
+        if (!initialized) {
+            initPCA9685()
+        }
+        // 50hz: 20,000 us
+        let v_us = (degree * 1800 / 180 + 600) // 0.6 ~ 2.4
+        let value = v_us * 4096 / 20000
+        setPwm(index + 7, 0, value)
+    }
+    
+    
     /**
      * Servo Execute
      * @param index Servo Channel; eg: S1
