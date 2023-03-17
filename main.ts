@@ -369,8 +369,8 @@ namespace Robobox {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% subcategory="Manuva" weight=110
     export function Manuvalrd(delay: number): void {
-        MotorRun(0x1, -200);
-        MotorRun(0x4, -200);
+        MotorRun(0x2, -200);
+        MotorRun(0x3, -200);
         basic.pause(delay);
         MotorStopAll()
     }
@@ -379,8 +379,8 @@ namespace Robobox {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% subcategory="Manuva" weight=110
     export function Manuvarrd(delay: number): void {
-        MotorRun(0x2, -200);
-        MotorRun(0x3, -200);
+        MotorRun(0x1, -200);
+        MotorRun(0x4, -200);
         basic.pause(delay);
         MotorStopAll()
     }
