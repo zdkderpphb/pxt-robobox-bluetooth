@@ -266,7 +266,7 @@ namespace Robobox {
     //% group="Linea" weight=89
     //% degree.min=0 degree.max=180
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-     //% subcategory="Linea" weight=90
+     //% subcategory="Linea" weight=10
     export function Stift_rauf(index: Servos): void {
         if (!initialized) {
             initPCA9685()
@@ -281,8 +281,8 @@ namespace Robobox {
      * @param index Servo Channel; eg: S1
      * @param degree [0-180] degree of servo; eg: 0, 90, 180
     */
-    //% blockId=robotbit_stift_rauf block="Stift runter|%index"
-    //% group="Linea" weight=89
+    //% blockId=robotbit_stift_runter block="Stift runter|%index"
+    //% group="Linea" weight=10
     //% degree.min=0 degree.max=180
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
      //% subcategory="Linea" weight=90
