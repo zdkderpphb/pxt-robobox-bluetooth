@@ -207,7 +207,9 @@ namespace Robobox {
         }
 
         return neoStrip;
-    }
+  }
+  
+/*#############################################################################BEEBOT START###############################################*/
 //% blockId=robotbit_Beebot_vor block="vorwärts |Dauer %delay|Millisekunden"
     //% group="Beebot" weight=54
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
@@ -256,6 +258,7 @@ namespace Robobox {
       basic.pause(delay);
       MotorStopAll()
   }
+  /*#############################################################################BEEBOT ENDE###############################################*/
   
     function triggerPulse() {
       // Reset trigger pin

@@ -10,7 +10,6 @@
     "files": [
         "main.blocks",
         "main.ts",
-        "helper.ts",
         "README.md"
     ],
     "testFiles": [
