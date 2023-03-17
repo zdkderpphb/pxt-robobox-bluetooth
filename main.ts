@@ -362,6 +362,7 @@ namespace Robobox {
   */
   //% blockId=robotbit_motor_rundelay block="Motor|%index|Geschwindigkeit %speed|Dauer %delay|Milisekunden"
   //% group="Motor" weight=105
+  //%blockGap=8
   //% speed.min=-255 speed.max=255
   //% subcategory="Fahren Advanced" weight=105
   export function MotorRunDelay(index: Motors, speed: number, delay: number): void {
