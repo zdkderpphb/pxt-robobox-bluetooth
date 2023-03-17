@@ -353,8 +353,8 @@ namespace Robobox {
      * @param index Servo Channel; eg: S1
      * @param degree [0-180] degree of servo; eg: 0, 90, 180
     */
-    //% blockId=robotbit_servo block="Servo|%index|degree %degree"
-    //% group="Servo" weight=62
+    //% blockId=robotbit_servo block="Servo|%index|Grad %degree"
+    //% group="Servo" weight=90
     //% degree.min=0 degree.max=180
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
      //% subcategory="RoboterArm" weight=90
@@ -369,8 +369,8 @@ namespace Robobox {
   }
 
 
-  //% blockId=robotbit_stepper_degree block="Schrittmotor 28BYJ-48|%index|degree %degree"
-  //% group="Motor" weight=54
+  //% blockId=robotbit_stepper_degree block="Schrittmotor 28BYJ-48|%index|Grad %degree"
+  //% group="Motor" weight=90
   //% subcategory="RoboterArm" weight=90
   export function StepperDegree(index: Steppers, degree: number): void {
       if (!initialized) {
@@ -383,8 +383,8 @@ namespace Robobox {
   }
 
 
-  //% blockId=robotbit_stepper_turn block="Schrittmotor 28BYJ-48|%index|turn %turn"
-  //% group="Motor" weight=53
+  //% blockId=robotbit_stepper_turn block="Schrittmotor 28BYJ-48|%index|drehe %turn"
+  //% group="Motor" weight=90
   //% subcategory="RoboterArm" weight=90
   export function StepperTurn(index: Steppers, turn: Turns): void {
       let degree = turn;
