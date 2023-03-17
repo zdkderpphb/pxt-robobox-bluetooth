@@ -291,7 +291,7 @@ namespace Robobox {
             initPCA9685()
         }
         // 50hz: 20,000 us
-        let v_us = (50 * 1800 / 180 + 600) // 0.6 ~ 2.4
+        let v_us = (90 * 1800 / 180 + 600) // 0.6 ~ 2.4
         let value = v_us * 4096 / 20000
         setPwm(index + 7, 0, value)
     }
