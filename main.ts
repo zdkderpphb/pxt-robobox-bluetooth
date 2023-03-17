@@ -266,7 +266,7 @@ namespace Robobox {
     //% group="Linea" weight=89
     //% degree.min=0 degree.max=180
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-     //% subcategory="Linea" weight=10
+     //% subcategory="Linea" weight=100
     export function Stift_rauf(index: Servos): void {
         if (!initialized) {
             initPCA9685()
@@ -285,7 +285,7 @@ namespace Robobox {
     //% group="Linea" weight=10
     //% degree.min=0 degree.max=180
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-     //% subcategory="Linea" weight=10
+     //% subcategory="Linea" weight=100
     export function Stift_runter(index: Servos): void {
         if (!initialized) {
             initPCA9685()
