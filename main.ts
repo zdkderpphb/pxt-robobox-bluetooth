@@ -209,19 +209,31 @@ namespace Robobox {
         return neoStrip;
   }
   
-/*#############################################################################BEEBOT START###############################################*/
-//% blockId=robotbit_Beebot_vor block="vorwärts |Dauer %delay|Millisekunden"
-    //% group="Beebot" weight=4
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    //% subcategory="Basic" weight=90
-    export function BeeVor(delay: number): void {
-      MotorRun(0x1, 200);
-      MotorRun(0x2, 200);
-      MotorRun(0x3, 200);
-      MotorRun(0x4, 200);
-      basic.pause(delay);
-      MotorStopAll()
+  /*#############################################################################BEEBOT START###############################################*/
+//% blockId=robotbit_Beebot_rechts block="rechts |Dauer %delay|Millisekunden"
+  //% group="Beebot" weight=1
+  //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+  //% subcategory="Basic" weight=90
+  export function BeeRechts(delay: number): void {
+    MotorRun(0x1, -200);
+    MotorRun(0x2, -200);
+    MotorRun(0x3, 200);
+    MotorRun(0x4, 200);
+    basic.pause(delay);
+    MotorStopAll()
   }
+//% blockId=robotbit_Beebot_links block="links |Dauer %delay|Millisekunden"
+  //% group="Beebot" weight=2
+  //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+  //% subcategory="Basic" weight=90
+  export function BeeLinks(delay: number): void {
+    MotorRun(0x1, 200);
+    MotorRun(0x2, 200);
+    MotorRun(0x3, -200);
+    MotorRun(0x4, -200);
+    basic.pause(delay);
+    MotorStopAll()
+}
   //% blockId=robotbit_Beebot_zur block="rückwärts |Dauer %delay|Millisekunden"
   //% group="Beebot" weight=3
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
@@ -234,30 +246,20 @@ namespace Robobox {
       basic.pause(delay);
       MotorStopAll()
   }
-   //% blockId=robotbit_Beebot_links block="links |Dauer %delay|Millisekunden"
-  //% group="Beebot" weight=2
-  //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-  //% subcategory="Basic" weight=90
-  export function BeeLinks(delay: number): void {
+//% blockId=robotbit_Beebot_vor block="vorwärts |Dauer %delay|Millisekunden"
+    //% group="Beebot" weight=4
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    //% subcategory="Basic" weight=90
+    export function BeeVor(delay: number): void {
       MotorRun(0x1, 200);
       MotorRun(0x2, 200);
-      MotorRun(0x3, -200);
-      MotorRun(0x4, -200);
-      basic.pause(delay);
-      MotorStopAll()
-  }
-  //% blockId=robotbit_Beebot_rechts block="rechts |Dauer %delay|Millisekunden"
-  //% group="Beebot" weight=1
-  //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-  //% subcategory="Basic" weight=90
-  export function BeeRechts(delay: number): void {
-      MotorRun(0x1, -200);
-      MotorRun(0x2, -200);
       MotorRun(0x3, 200);
       MotorRun(0x4, 200);
       basic.pause(delay);
       MotorStopAll()
   }
+   
+  
   /*#############################################################################BEEBOT ENDE###############################################*/
   
     function triggerPulse() {
