@@ -259,7 +259,7 @@ namespace Robobox {
       MotorStopAll()
   }
   //% blockId=robotbit_Beebot_klinks block="Fahren Kurve links |Dauer %delay|ms"
-    //% group="Linea/Manuva" weight=4
+    //% group="Linea/Manuva" weight=5
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% subcategory="Fahren Basic" weight=90
     export function BeeKurveLinks(delay: number): void {
@@ -269,7 +269,7 @@ namespace Robobox {
       MotorStopAll()
   }
   //% blockId=robotbit_Beebot_krechts block="Fahren Kurve rechts |Dauer %delay|ms"
-    //% group="Linea/Manuva" weight=4
+    //% group="Linea/Manuva" weight=6
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% subcategory="Fahren Basic" weight=90
     export function BeeKurveRechts(delay: number): void {
