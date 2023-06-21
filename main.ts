@@ -210,7 +210,7 @@ namespace Robobox {
   }
   
   /*#############################################################################Fahren Basic START###############################################*/
-//% blockId=robotbit_Beebot_rechts block="rechts |Dauer %delay|Millisekunden"
+//% blockId=robotbit_Beebot_rechts block="Drehen rechts |Dauer %delay|Millisekunden"
   //% group="Linea/Manuva" weight=1
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Basic" weight=90
@@ -222,7 +222,7 @@ namespace Robobox {
     basic.pause(delay);
     MotorStopAll()
   }
-//% blockId=robotbit_Beebot_links block="links |Dauer %delay|Millisekunden"
+//% blockId=robotbit_Beebot_links block="Drehen links |Dauer %delay|Millisekunden"
   //% group="Linea/Manuva" weight=2
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Basic" weight=90
@@ -234,7 +234,7 @@ namespace Robobox {
     basic.pause(delay);
     MotorStopAll()
 }
-  //% blockId=robotbit_Beebot_zur block="rückwärts |Dauer %delay|Millisekunden"
+  //% blockId=robotbit_Beebot_zur block="Fahren rückwärts |Dauer %delay|Millisekunden"
   //% group="Linea/Manuva" weight=3
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Basic" weight=90
@@ -246,7 +246,7 @@ namespace Robobox {
       basic.pause(delay);
       MotorStopAll()
   }
-//% blockId=robotbit_Beebot_vor block="vorwärts |Dauer %delay|Millisekunden"
+//% blockId=robotbit_Beebot_vor block="Fahren vorwärts |Dauer %delay|Millisekunden"
     //% group="Linea/Manuva" weight=4
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% subcategory="Fahren Basic" weight=90
