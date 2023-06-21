@@ -258,6 +258,26 @@ namespace Robobox {
       basic.pause(delay);
       MotorStopAll()
   }
+  //% blockId=robotbit_Beebot_vor block="Fahren Kurve links |Dauer %delay|ms"
+    //% group="Linea/Manuva" weight=4
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    //% subcategory="Fahren Basic" weight=90
+    export function BeeKurveLinks(delay: number): void {
+      MotorRun(0x1, 200);
+      MotorRun(0x2, 200);
+      basic.pause(delay);
+      MotorStopAll()
+  }
+  //% blockId=robotbit_Beebot_vor block="Fahren Kurve rechts |Dauer %delay|ms"
+    //% group="Linea/Manuva" weight=4
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    //% subcategory="Fahren Basic" weight=90
+    export function BeeKurveRechts(delay: number): void {
+      MotorRun(0x3, 200);
+      MotorRun(0x4, 200);
+      basic.pause(delay);
+      MotorStopAll()
+  }
   
    //% blockId=robotbit_Manuva_linksvordiag block="Diagonal Links Vor |Dauer %delay|ms"
     //% group="Manuva" weight=110
