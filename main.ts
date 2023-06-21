@@ -236,10 +236,10 @@ namespace Robobox {
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Basic" weight=90
   export function BeeLinks(delay: number): void {
-    MotorRun(0x1, 200);
-    MotorRun(0x2, 200);
-    MotorRun(0x3, -200);
-    MotorRun(0x4, -200);
+    MotorRun(0x1, speed_custom);
+    MotorRun(0x2, speed_custom);
+    MotorRun(0x3, -speed_custom);
+    MotorRun(0x4, -speed_custom);
     basic.pause(delay);
     MotorStopAll()
 }
@@ -248,10 +248,10 @@ namespace Robobox {
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Basic" weight=90
   export function BeeZur(delay: number): void {
-      MotorRun(0x1, -200);
-      MotorRun(0x2, -200);
-      MotorRun(0x3, -200);
-      MotorRun(0x4, -200);
+      MotorRun(0x1, -speed_custom);
+      MotorRun(0x2, -speed_custom);
+      MotorRun(0x3, -speed_custom);
+      MotorRun(0x4, -speed_custom);
       basic.pause(delay);
       MotorStopAll()
   }
@@ -260,10 +260,10 @@ namespace Robobox {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% subcategory="Fahren Basic" weight=90
     export function BeeVor(delay: number): void {
-      MotorRun(0x1, 200);
-      MotorRun(0x2, 200);
-      MotorRun(0x3, 200);
-      MotorRun(0x4, 200);
+      MotorRun(0x1, speed_custom);
+      MotorRun(0x2, speed_custom);
+      MotorRun(0x3, speed_custom);
+      MotorRun(0x4, speed_custom);
       basic.pause(delay);
       MotorStopAll()
   }
@@ -272,8 +272,8 @@ namespace Robobox {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% subcategory="Fahren Basic" weight=90
     export function BeeKurveLinks(delay: number): void {
-      MotorRun(0x1, 200);
-      MotorRun(0x2, 200);
+      MotorRun(0x1, speed_custom);
+      MotorRun(0x2, speed_custom);
       basic.pause(delay);
       MotorStopAll()
   }
@@ -282,8 +282,8 @@ namespace Robobox {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% subcategory="Fahren Basic" weight=90
     export function BeeKurveRechts(delay: number): void {
-      MotorRun(0x3, 200);
-      MotorRun(0x4, 200);
+      MotorRun(0x3, speed_custom);
+      MotorRun(0x4, speed_custom);
       basic.pause(delay);
       MotorStopAll()
   }
@@ -293,8 +293,8 @@ namespace Robobox {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% subcategory="Fahren Basic" weight=110
     export function Manuvalvd(delay: number): void {
-      MotorRun(0x1, 200);
-      MotorRun(0x3, 200);
+      MotorRun(0x1, speed_custom);
+      MotorRun(0x3, speed_custom);
       basic.pause(delay);
       MotorStopAll()
   }
@@ -303,8 +303,8 @@ namespace Robobox {
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Basic" weight=110
   export function Manuvarvd(delay: number): void {
-      MotorRun(0x2, 200);
-      MotorRun(0x4, 200);
+      MotorRun(0x2, speed_custom);
+      MotorRun(0x4, speed_custom);
       basic.pause(delay);
       MotorStopAll()
   }
@@ -313,8 +313,8 @@ namespace Robobox {
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Basic" weight=110
   export function Manuvalrd(delay: number): void {
-      MotorRun(0x2, -200);
-      MotorRun(0x4, -200);
+      MotorRun(0x2, -speed_custom);
+      MotorRun(0x4, -speed_custom);
       basic.pause(delay);
       MotorStopAll()
   }
@@ -323,8 +323,8 @@ namespace Robobox {
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Basic" weight=110
   export function Manuvarrd(delay: number): void {
-      MotorRun(0x1, -200);
-      MotorRun(0x3, -200);
+      MotorRun(0x1, -speed_custom);
+      MotorRun(0x3, -speed_custom);
       basic.pause(delay);
       MotorStopAll()
   }
@@ -333,10 +333,10 @@ namespace Robobox {
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Basic" weight=110
   export function Manuvarrs(delay: number): void {
-    MotorRun(0x1, 200);
-    MotorRun(0x2, -200);
-    MotorRun(0x3, 200);
-    MotorRun(0x4, -200);
+    MotorRun(0x1, speed_custom);
+    MotorRun(0x2, -speed_custom);
+    MotorRun(0x3, speed_custom);
+    MotorRun(0x4, -speed_custom);
     basic.pause(delay);
     MotorStopAll()
   }
@@ -345,10 +345,10 @@ namespace Robobox {
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Basic" weight=110
   export function Manuvarls(delay: number): void {
-    MotorRun(0x1, -200);
-    MotorRun(0x2, 200);
-    MotorRun(0x3, -200);
-    MotorRun(0x4, 200);
+    MotorRun(0x1, -speed_custom);
+    MotorRun(0x2, speed_custom);
+    MotorRun(0x3, -speed_custom);
+    MotorRun(0x4, speed_custom);
     basic.pause(delay);
     MotorStopAll()
 }
