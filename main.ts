@@ -211,7 +211,7 @@ namespace Robobox {
   }
   
   /*#############################################################################Fahren Basic START###############################################*/
-//% blockId=setSpeed_custom block="Geschwindigkeit %speed_c|ms"
+//% blockId=setSpeed_custom block="Geschwindigkeit %speed_c|%"
   //% speed_c.min=0 speed_c.max=100
   //% group="Geschwindigkeit" weight=1
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
