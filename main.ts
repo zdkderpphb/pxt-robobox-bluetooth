@@ -258,7 +258,7 @@ namespace Robobox {
       basic.pause(delay);
       MotorStopAll()
   }
-  //% blockId=robotbit_Beebot_vor block="Fahren Kurve links |Dauer %delay|ms"
+  //% blockId=robotbit_Beebot_klinks block="Fahren Kurve links |Dauer %delay|ms"
     //% group="Linea/Manuva" weight=4
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% subcategory="Fahren Basic" weight=90
@@ -268,7 +268,7 @@ namespace Robobox {
       basic.pause(delay);
       MotorStopAll()
   }
-  //% blockId=robotbit_Beebot_vor block="Fahren Kurve rechts |Dauer %delay|ms"
+  //% blockId=robotbit_Beebot_krechts block="Fahren Kurve rechts |Dauer %delay|ms"
     //% group="Linea/Manuva" weight=4
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% subcategory="Fahren Basic" weight=90
