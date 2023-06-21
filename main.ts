@@ -217,7 +217,7 @@ namespace Robobox {
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Basic" weight=90
   export function setCustomSpeed(speed_c: number): void {
-    speed_custom = speed_c
+    speed_custom = Math.map(speed_c, 0, 100, 0, 255)
   }
   //% blockId=robotbit_Beebot_rechts block="Drehen rechts |Dauer %delay|ms"
   //% group="Linea/Manuva" weight=1
