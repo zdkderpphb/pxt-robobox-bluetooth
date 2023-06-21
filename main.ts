@@ -100,7 +100,8 @@ namespace Robobox {
     let initializedMatrix = false
     let neoStrip: neopixel.Strip;
     let matBuf = pins.createBuffer(17);
-    let distanceBuf = 0;
+  let distanceBuf = 0;
+  let speed_custom = 0
 
     function i2cwrite(addr: number, reg: number, value: number) {
         let buf = pins.createBuffer(2)
@@ -210,7 +211,15 @@ namespace Robobox {
   }
   
   /*#############################################################################Fahren Basic START###############################################*/
-//% blockId=robotbit_Beebot_rechts block="Drehen rechts |Dauer %delay|ms"
+//% blockId=setSpeed_custom block="Geschwindigkeit %speed_c|ms"
+  //% speed_c.min=0 speed_c.max=100
+  //% group="Geschwindigkeit" weight=1
+  //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+  //% subcategory="Fahren Basic" weight=90
+  export function setCustomSpeed(speed_c: number): void {
+    speed_custom = speed_c
+  }
+  //% blockId=robotbit_Beebot_rechts block="Drehen rechts |Dauer %delay|ms"
   //% group="Linea/Manuva" weight=1
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Basic" weight=90
