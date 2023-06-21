@@ -224,10 +224,10 @@ namespace Robobox {
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Basic" weight=90
   export function BeeRechts(delay: number): void {
-    MotorRun(0x1, -200);
-    MotorRun(0x2, -200);
-    MotorRun(0x3, 200);
-    MotorRun(0x4, 200);
+    MotorRun(0x1, -speed_custom);
+    MotorRun(0x2, -speed_custom);
+    MotorRun(0x3, speed_custom);
+    MotorRun(0x4, speed_custom);
     basic.pause(delay);
     MotorStopAll()
   }
