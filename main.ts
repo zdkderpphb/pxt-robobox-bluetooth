@@ -362,7 +362,7 @@ namespace Robobox {
   
     //% blockId=robotbit_motor_run block="Motor|%index|Geschwindigkeit %speed"
     //% group="Motor" weight=120
-    //% speed.min=0 speed.max=100
+    //% speed.min=-100 speed.max=100
     //% subcategory="Fahren Advanced" weight=120
     export function MotorRun(index: Motors, speed: number): void {
       if (!initialized) {
@@ -393,14 +393,14 @@ namespace Robobox {
   /**
    * Execute two motors at the same time
    * @param motor1 First Motor; eg: M1A, M1B
-   * @param speed1 [-255-255] speed of motor; eg: 150, -150
+   * @param speed1 [-255-255] speed of motor; eg: 100, -100
    * @param motor2 Second Motor; eg: M2A, M2B
-   * @param speed2 [-255-255] speed of motor; eg: 150, -150
+   * @param speed2 [-255-255] speed of motor; eg: 100, -100
   */
   //% blockId=robotbit_motor_dual block="Motor|%motor1|Geschwindigkeit %speed1|%motor2|Geschwindigkeit %speed2"
   //% group="Motor" weight=120
-  //% speed1.min=0 speed1.max=100
-  //% speed2.min=0 speed2.max=100
+  //% speed1.min=-100 speed1.max=100
+  //% speed2.min=-100 speed2.max=100
   //% subcategory="Fahren Advanced" weight=120
   
   export function MotorRunDual(motor1: Motors, speed1: number, motor2: Motors, speed2: number): void {
@@ -411,7 +411,7 @@ namespace Robobox {
   /**
    * Execute single motors with delay
    * @param index Motor Index; eg: M1A, M1B, M2A, M2B
-   * @param speed [-255-255] speed of motor; eg: 150, -150
+   * @param speed [-255-255] speed of motor; eg: 100, -100
    * @param delay seconde delay to stop; eg: 1
   */
   //% blockId=robotbit_motor_rundelay block="Motor|%index|Geschwindigkeit %speed|Dauer %delay|Millisekunden"
