@@ -559,7 +559,7 @@ let ultrasonicState: UltrasonicDevice;
 
 /**
  * Configures the ultrasonic distance sensor and measures continuously in the background.
- * @param trig pin connected to trig, eg: DigitalPin.P5
+ * @param trig pin connected to trig, eg: DigitalPin.P2
  * @param echo pin connected to echo, eg: DigitalPin.P8
  */
 //% subcategory="Abstandssensor"
