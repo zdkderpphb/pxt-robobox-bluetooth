@@ -362,7 +362,7 @@ namespace Robobox {
   
     //% blockId=robotbit_motor_run block="Motor|%index|Geschwindigkeit %speed"
     //% group="Motor" weight=120
-    //% speed.min=-255 speed.max=255
+    //% speed.min=0 speed.max=100
     //% subcategory="Fahren Advanced" weight=120
     export function MotorRun(index: Motors, speed: number): void {
       if (!initialized) {
@@ -380,11 +380,12 @@ namespace Robobox {
       let pp = (index - 1) * 2
       let pn = (index - 1) * 2 + 1
       if (speed >= 0) {
-          setPwm(pp, 0, speed)
+
+          setPwm(pp, 0, Math.map(speed, 0, 100, 0, 255))
           setPwm(pn, 0, 0)
       } else {
           setPwm(pp, 0, 0)
-          setPwm(pn, 0, -speed)
+          setPwm(pn, 0, -Math.map(speed, 0, 100, 0, 255))
       }
   }
 
@@ -398,8 +399,8 @@ namespace Robobox {
   */
   //% blockId=robotbit_motor_dual block="Motor|%motor1|Geschwindigkeit %speed1|%motor2|Geschwindigkeit %speed2"
   //% group="Motor" weight=120
-  //% speed1.min=-255 speed1.max=255
-  //% speed2.min=-255 speed2.max=255
+  //% speed1.min=0 speed1.max=100
+  //% speed2.min=0 speed2.max=100
   //% subcategory="Fahren Advanced" weight=120
   
   export function MotorRunDual(motor1: Motors, speed1: number, motor2: Motors, speed2: number): void {
@@ -416,7 +417,7 @@ namespace Robobox {
   //% blockId=robotbit_motor_rundelay block="Motor|%index|Geschwindigkeit %speed|Dauer %delay|Millisekunden"
   //% group="Motor" weight=120
   //%blockGap=8
-  //% speed.min=-255 speed.max=255
+  //% speed.min=-0 speed.max=100
   //% subcategory="Fahren Advanced" weight=120
   export function MotorRunDelay(index: Motors, speed: number, delay: number): void {
       MotorRun(index, speed);
