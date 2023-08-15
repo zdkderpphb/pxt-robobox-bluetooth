@@ -101,7 +101,7 @@ namespace Robobox {
     let neoStrip: neopixel.Strip;
     let matBuf = pins.createBuffer(17);
   let distanceBuf = 0;
-  let speed_custom = 0
+  let speed_custom = 80;
 
     function i2cwrite(addr: number, reg: number, value: number) {
         let buf = pins.createBuffer(2)
@@ -216,47 +216,12 @@ namespace Robobox {
   //% group="Geschwindigkeit" weight=1
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Basic" weight=90
-  export function setCustomSpeed(speed_c: number): void {
-    speed_custom = Math.map(speed_c, 0, 100, 0, 255)
+  export function setCustomSpeed(speed_c: number = 100): void {
+    speed_custom = Math.map(speed_c, 1, 100, 90, 255)
   }
-  //% blockId=robotbit_Beebot_rechts block="Drehen rechts |Dauer %delay|ms"
-  //% group="Linea/Manuva" weight=1
-  //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-  //% subcategory="Fahren Basic" weight=90
-  export function BeeRechts(delay: number): void {
-    MotorRun(0x1, -speed_custom);
-    MotorRun(0x2, -speed_custom);
-    MotorRun(0x3, speed_custom);
-    MotorRun(0x4, speed_custom);
-    basic.pause(delay);
-    MotorStopAll()
-  }
-//% blockId=robotbit_Beebot_links block="Drehen links |Dauer %delay|ms"
-  //% group="Linea/Manuva" weight=2
-  //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-  //% subcategory="Fahren Basic" weight=90
-  export function BeeLinks(delay: number): void {
-    MotorRun(0x1, speed_custom);
-    MotorRun(0x2, speed_custom);
-    MotorRun(0x3, -speed_custom);
-    MotorRun(0x4, -speed_custom);
-    basic.pause(delay);
-    MotorStopAll()
-}
-  //% blockId=robotbit_Beebot_zur block="Fahren rückwärts |Dauer %delay|ms"
-  //% group="Linea/Manuva" weight=3
-  //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-  //% subcategory="Fahren Basic" weight=90
-  export function BeeZur(delay: number): void {
-      MotorRun(0x1, -speed_custom);
-      MotorRun(0x2, -speed_custom);
-      MotorRun(0x3, -speed_custom);
-      MotorRun(0x4, -speed_custom);
-      basic.pause(delay);
-      MotorStopAll()
-  }
-//% blockId=robotbit_Beebot_vor block="Fahren vorwärts |Dauer %delay|ms"
-    //% group="Linea/Manuva" weight=4
+ 
+    //% blockId=robotbit_Beebot_vor block="Fahren vorwärts |Dauer %delay|ms"
+    //% group="Linea/Manuva" weight=1
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% subcategory="Fahren Basic" weight=90
     export function BeeVor(delay: number): void {
@@ -268,7 +233,7 @@ namespace Robobox {
       MotorStopAll()
   }
   //% blockId=robotbit_Beebot_klinks block="Fahren Kurve links |Dauer %delay|ms"
-    //% group="Linea/Manuva" weight=5
+    //% group="Linea/Manuva" weight=2
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% subcategory="Fahren Basic" weight=90
     export function BeeKurveLinks(delay: number): void {
@@ -277,6 +242,44 @@ namespace Robobox {
       basic.pause(delay);
       MotorStopAll()
   }
+    
+   //% blockId=robotbit_Beebot_rechts block="Drehen rechts |Dauer %delay|ms"
+  //% group="Linea/Manuva" weight=3
+  //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+  //% subcategory="Fahren Basic" weight=90
+  export function BeeRechts(delay: number): void {
+    MotorRun(0x1, -speed_custom);
+    MotorRun(0x2, -speed_custom);
+    MotorRun(0x3, speed_custom);
+    MotorRun(0x4, speed_custom);
+    basic.pause(delay);
+    MotorStopAll()
+  }
+//% blockId=robotbit_Beebot_links block="Drehen links |Dauer %delay|ms"
+  //% group="Linea/Manuva" weight=4
+  //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+  //% subcategory="Fahren Basic" weight=90
+  export function BeeLinks(delay: number): void {
+    MotorRun(0x1, speed_custom);
+    MotorRun(0x2, speed_custom);
+    MotorRun(0x3, -speed_custom);
+    MotorRun(0x4, -speed_custom);
+    basic.pause(delay);
+    MotorStopAll()
+}
+  //% blockId=robotbit_Beebot_zur block="Fahren rückwärts |Dauer %delay|ms"
+  //% group="Linea/Manuva" weight=5
+  //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+  //% subcategory="Fahren Basic" weight=90
+  export function BeeZur(delay: number): void {
+      MotorRun(0x1, -speed_custom);
+      MotorRun(0x2, -speed_custom);
+      MotorRun(0x3, -speed_custom);
+      MotorRun(0x4, -speed_custom);
+      basic.pause(delay);
+      MotorStopAll()
+  }
+
   //% blockId=robotbit_Beebot_krechts block="Fahren Kurve rechts |Dauer %delay|ms"
     //% group="Linea/Manuva" weight=6
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
