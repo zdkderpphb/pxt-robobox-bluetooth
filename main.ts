@@ -211,8 +211,10 @@ namespace Robobox {
   }
   
   /*#############################################################################Fahren Basic START###############################################*/
+   /**
+   * @param speed_c value of the speed between 1 and 100. eg: 100 */
 //% blockId=setSpeed_custom block="Geschwindigkeit %speed_c|%"
-  //% speed_c.min=0 speed_c.max=100
+  //% speed_c.min=1 speed_c.max=100
   //% group="Geschwindigkeit" weight=1
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Basic" weight=90
@@ -232,8 +234,20 @@ namespace Robobox {
       basic.pause(delay);
       MotorStopAll()
   }
+    //% blockId=robotbit_Beebot_zur block="Fahren rückwärts |Dauer %delay|ms"
+  //% group="Linea/Manuva" weight=2
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+  //% subcategory="Fahren Basic" weight=90
+  export function BeeZur(delay: number): void {
+      MotorRun(0x1, -speed_custom);
+      MotorRun(0x2, -speed_custom);
+      MotorRun(0x3, -speed_custom);
+      MotorRun(0x4, -speed_custom);
+      basic.pause(delay);
+      MotorStopAll()
+  }
   //% blockId=robotbit_Beebot_klinks block="Fahren Kurve links |Dauer %delay|ms"
-    //% group="Linea/Manuva" weight=2
+    //% group="Linea/Manuva" weight=3
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% subcategory="Fahren Basic" weight=90
     export function BeeKurveLinks(delay: number): void {
@@ -244,7 +258,7 @@ namespace Robobox {
   }
     
    //% blockId=robotbit_Beebot_rechts block="Drehen rechts |Dauer %delay|ms"
-  //% group="Linea/Manuva" weight=3
+  //% group="Linea/Manuva" weight=4
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Basic" weight=90
   export function BeeRechts(delay: number): void {
@@ -256,7 +270,7 @@ namespace Robobox {
     MotorStopAll()
   }
 //% blockId=robotbit_Beebot_links block="Drehen links |Dauer %delay|ms"
-  //% group="Linea/Manuva" weight=4
+  //% group="Linea/Manuva" weight=5
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Basic" weight=90
   export function BeeLinks(delay: number): void {
@@ -267,18 +281,7 @@ namespace Robobox {
     basic.pause(delay);
     MotorStopAll()
 }
-  //% blockId=robotbit_Beebot_zur block="Fahren rückwärts |Dauer %delay|ms"
-  //% group="Linea/Manuva" weight=5
-  //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-  //% subcategory="Fahren Basic" weight=90
-  export function BeeZur(delay: number): void {
-      MotorRun(0x1, -speed_custom);
-      MotorRun(0x2, -speed_custom);
-      MotorRun(0x3, -speed_custom);
-      MotorRun(0x4, -speed_custom);
-      basic.pause(delay);
-      MotorStopAll()
-  }
+  
 
   //% blockId=robotbit_Beebot_krechts block="Fahren Kurve rechts |Dauer %delay|ms"
     //% group="Linea/Manuva" weight=6
