@@ -223,7 +223,7 @@ namespace Robobox {
   }
  
     //% blockId=robotbit_Beebot_vor block="Fahren vorwärts |Dauer %delay|ms"
-    //% group="Linea/Manuva" weight=1
+    //% group="Linea/Manuva" weight=6
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% subcategory="Fahren Basic" weight=90
     export function BeeVor(delay: number): void {
@@ -235,7 +235,7 @@ namespace Robobox {
       MotorStopAll()
   }
     //% blockId=robotbit_Beebot_zur block="Fahren rückwärts |Dauer %delay|ms"
-  //% group="Linea/Manuva" weight=2
+  //% group="Linea/Manuva" weight=5
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Basic" weight=90
   export function BeeZur(delay: number): void {
@@ -247,7 +247,7 @@ namespace Robobox {
       MotorStopAll()
   }
   //% blockId=robotbit_Beebot_klinks block="Fahren Kurve links |Dauer %delay|ms"
-    //% group="Linea/Manuva" weight=3
+    //% group="Linea/Manuva" weight=4
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% subcategory="Fahren Basic" weight=90
     export function BeeKurveLinks(delay: number): void {
@@ -258,7 +258,7 @@ namespace Robobox {
   }
     
    //% blockId=robotbit_Beebot_rechts block="Drehen rechts |Dauer %delay|ms"
-  //% group="Linea/Manuva" weight=4
+  //% group="Linea/Manuva" weight=3
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Basic" weight=90
   export function BeeRechts(delay: number): void {
@@ -270,7 +270,7 @@ namespace Robobox {
     MotorStopAll()
   }
 //% blockId=robotbit_Beebot_links block="Drehen links |Dauer %delay|ms"
-  //% group="Linea/Manuva" weight=5
+  //% group="Linea/Manuva" weight=2
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Basic" weight=90
   export function BeeLinks(delay: number): void {
@@ -284,7 +284,7 @@ namespace Robobox {
   
 
   //% blockId=robotbit_Beebot_krechts block="Fahren Kurve rechts |Dauer %delay|ms"
-    //% group="Linea/Manuva" weight=6
+    //% group="Linea/Manuva" weight=1
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% subcategory="Fahren Basic" weight=90
     export function BeeKurveRechts(delay: number): void {
