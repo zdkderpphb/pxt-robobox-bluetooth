@@ -245,7 +245,7 @@ namespace Robobox {
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Basic" weight=90
   export function settrimr(trim_r_block: number = 1): void {
-    trim_r = trim_l_block;
+    trim_r = trim_r_block;
   }
  
     //% blockId=robotbit_Beebot_vor block="Fahren vorwärts |Dauer %delay|ms"
