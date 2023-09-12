@@ -219,7 +219,7 @@ namespace Robobox {
    * @param speed_c value of the speed between 1 and 100. eg: 100 */
 //% blockId=setSpeed_custom block="Geschwindigkeit %speed_c|%"
   //% speed_c.min=1 speed_c.max=100
-  //% group="Geschwindigkeit" weight=1
+  //% group="Setup" weight=1
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Basic" weight=90
   export function setCustomSpeed(speed_c: number = 100): void {
@@ -227,10 +227,10 @@ namespace Robobox {
     speed_custom_r = Math.map(speed_c, 1, 100, 90, 255)
   }
      /**
-   * @param trim_l value of the speed between 1 and 10. eg: 100 */
-//% blockId=setSpeed_custom block="Geschwindigkeit %speed_c|%"
-  //% trim_l.min=1 trim_l.max=100
-  //% group="Trimmen links" weight=1
+   * @param trim_l value of the speed between 1 and 10. eg: 10 */
+//% blockId=trim_l block="Trimmen links %trim_l|%"
+  //% trim_l.min=1 trim_l.max=10
+  //% group="Setup" weight=1
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Basic" weight=90
   export function settriml(trim_l: number = 1): void {
