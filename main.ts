@@ -102,6 +102,8 @@ namespace Robobox {
     let matBuf = pins.createBuffer(17);
   let distanceBuf = 0;
   let speed_custom = 80;
+  let trim_l = 0;
+    let trim_r = 0;
 
     function i2cwrite(addr: number, reg: number, value: number) {
         let buf = pins.createBuffer(2)
@@ -219,7 +221,18 @@ namespace Robobox {
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Basic" weight=90
   export function setCustomSpeed(speed_c: number = 100): void {
-    speed_custom = Math.map(speed_c, 1, 100, 90, 255)
+    speed_custom_l = Math.map(speed_c, 1, 100, 90, 255)
+    speed_custom_r = Math.map(speed_c, 1, 100, 90, 255)
+  }
+     /**
+   * @param trim_l value of the speed between 1 and 10. eg: 100 */
+//% blockId=setSpeed_custom block="Geschwindigkeit %speed_c|%"
+  //% trim_l.min=1 trim_l.max=100
+  //% group="Trimmen links" weight=1
+  //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+  //% subcategory="Fahren Basic" weight=90
+  export function settriml(trim_l: number = 1): void {
+    trim_l = trim_l;
   }
  
     //% blockId=robotbit_Beebot_vor block="Fahren vorwärts |Dauer %delay|ms"
@@ -227,10 +240,10 @@ namespace Robobox {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% subcategory="Fahren Basic" weight=90
     export function BeeVor(delay: number): void {
-      MotorRun(0x1, speed_custom);
-      MotorRun(0x2, speed_custom);
-      MotorRun(0x3, speed_custom);
-      MotorRun(0x4, speed_custom);
+      MotorRun(0x1, speed_custom_r-trim_l);
+      MotorRun(0x2, speed_custom_r-trim_l);
+      MotorRun(0x3, speed_custom_l);
+      MotorRun(0x4, speed_custom_l);
       basic.pause(delay);
       MotorStopAll()
   }
