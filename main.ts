@@ -102,6 +102,8 @@ namespace Robobox {
     let matBuf = pins.createBuffer(17);
   let distanceBuf = 0;
   let speed_custom = 80;
+     let speed_custom_l = 80;
+     let speed_custom_r = 80;
   let trim_l = 0;
     let trim_r = 0;
 
