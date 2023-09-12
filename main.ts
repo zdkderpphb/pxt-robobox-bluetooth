@@ -227,14 +227,14 @@ namespace Robobox {
     speed_custom_r = Math.map(speed_c, 1, 100, 90, 255)
   }
      /**
-   * @param trim_l value of the speed between 1 and 10. eg: 10 */
-//% blockId=trim_l block="Trimmen links %trim_l|%"
-  //% trim_l.min=1 trim_l.max=10
+   * @param trim_l_block value of the speed between 1 and 10. eg: 10 */
+//% blockId=trim_l_block block="Trimmen links %trim_l_block|%"
+  //% trim_l_block.min=1 trim_l_block.max=100
   //% group="Setup" weight=1
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Basic" weight=90
-  export function settriml(trim_l: number = 1): void {
-    trim_l = trim_l;
+  export function settriml(trim_l_block: number = 1): void {
+    trim_l = trim_l_block;
   }
  
     //% blockId=robotbit_Beebot_vor block="Fahren vorwärts |Dauer %delay|ms"
