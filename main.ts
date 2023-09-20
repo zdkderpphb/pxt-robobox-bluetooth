@@ -365,10 +365,10 @@ namespace Robobox {
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Basic" weight=110
   export function Manuvarrs(delay: number): void {
-    MotorRun(0x1, speed_custom_r-trim_l);
-    MotorRun(0x2, -speed_custom_r-trim_l);
-    MotorRun(0x3, speed_custom_l-trim_r);
-    MotorRun(0x4, -speed_custom_l-trim_r);
+    MotorRun(0x1, -speed_custom_r-trim_l);
+    MotorRun(0x2, speed_custom_r-trim_l);
+    MotorRun(0x3, -speed_custom_l-trim_r);
+    MotorRun(0x4, speed_custom_l-trim_r);
     basic.pause(delay);
     MotorStopAll()
   }
@@ -377,10 +377,10 @@ namespace Robobox {
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Basic" weight=110
   export function Manuvarls(delay: number): void {
-    MotorRun(0x1, -speed_custom_r-trim_l);
-    MotorRun(0x2, speed_custom_r-trim_l);
-    MotorRun(0x3, -speed_custom_l-trim_r);
-    MotorRun(0x4, speed_custom_l-trim_r);
+    MotorRun(0x1, speed_custom_r-trim_l);
+    MotorRun(0x2, -speed_custom_r-trim_l);
+    MotorRun(0x3, speed_custom_l-trim_r);
+    MotorRun(0x4, -speed_custom_l-trim_r);
     basic.pause(delay);
     MotorStopAll()
 }
@@ -523,22 +523,34 @@ namespace Robobox {
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Advanced" weight=110
   export function Manuvarrs_a(): void {
-    MotorRun(0x1, speed_custom_r-trim_l);
-    MotorRun(0x2, -speed_custom_r-trim_l);
-    MotorRun(0x3, speed_custom_l-trim_r);
-    MotorRun(0x4, -speed_custom_l-trim_r);
+    MotorRun(0x1, -speed_custom_r-trim_l);
+    MotorRun(0x2, speed_custom_r-trim_l);
+    MotorRun(0x3, -speed_custom_l-trim_r);
+    MotorRun(0x4, speed_custom_l-trim_r);
   }
    //% blockId=robotbit_Manuva_linksschieben_adv block="Fahren links"
   //% group="Manuva" weight=110
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Advanced" weight=110
   export function Manuvarls_a(): void {
-    MotorRun(0x1, -speed_custom_r-trim_l);
-    MotorRun(0x2, speed_custom_r-trim_l);
-    MotorRun(0x3, -speed_custom_l-trim_r);
-    MotorRun(0x4, speed_custom_l-trim_r);
+    MotorRun(0x1, speed_custom_r-trim_l);
+    MotorRun(0x2, -speed_custom_r-trim_l);
+    MotorRun(0x3, speed_custom_l-trim_r);
+    MotorRun(0x4, -speed_custom_l-trim_r);
 
 }
+    //% blockId=robotbit_stop_all_adv block="Alle Motoren stoppen"
+  //% group="Motoren stoppen" weight=1
+  //% blockGap=50
+  //% subcategory="Fahren Advanced" weight=95
+  export function MotorStopAll(): void {
+      if (!initialized) {
+          initPCA9685()
+      }
+      for (let idx = 1; idx <= 4; idx++) {
+          stopMotor(idx);
+      }
+  }
  
   
   /*#############################################################################Fahren Advanced ENDE###############################################*/
