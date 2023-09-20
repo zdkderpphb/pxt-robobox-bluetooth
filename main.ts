@@ -390,7 +390,7 @@ namespace Robobox {
       /*#############################################################################Fahren Advanced START###############################################*/
    /**
    * @param speed_c value of the speed between 1 and 100. eg: 100 */
-//% blockId=setSpeed_custom block="Geschwindigkeit %speed_c|%"
+//% blockId=setSpeed_custom_adv block="Geschwindigkeit %speed_c|%"
   //% speed_c.min=1 speed_c.max=100
   //% group="Setup" weight=1
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
@@ -401,7 +401,7 @@ namespace Robobox {
   }
      /**
    * @param trim_l_block value of the speed between 1 and 10. eg: 10 */
-//% blockId=trim_l_block block="Trimmen links %trim_l_block|%"
+//% blockId=trim_l_block_adv block="Trimmen links %trim_l_block|%"
   //% trim_l_block.min=0 trim_l_block.max=100
   //% group="Setup" weight=1
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
@@ -412,7 +412,7 @@ namespace Robobox {
 
     /**
    * @param trim_r_block value of the speed between 1 and 10. eg: 10 */
-//% blockId=trim_r_block block="Trimmen rechts %trim_r_block|%"
+//% blockId=trim_r_block_adv block="Trimmen rechts %trim_r_block|%"
   //% trim_r_block.min=0 trim_r_block.max=100
   //% group="Setup" weight=1
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
@@ -421,7 +421,7 @@ namespace Robobox {
     trim_r = trim_r_block;
   }
  
-    //% blockId=robotbit_Beebot_vor block="Fahren vorwärts"
+    //% blockId=robotbit_Beebot_vor_adv block="Fahren vorwärts"
     //% group="Linea/Manuva" weight=6
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% subcategory="Fahren Advanced" weight=90
@@ -432,7 +432,7 @@ namespace Robobox {
       MotorRun(0x4, speed_custom_l-trim_r);
 
   }
-    //% blockId=robotbit_Beebot_zur block="Fahren rückwärts"
+    //% blockId=robotbit_Beebot_zur_adv block="Fahren rückwärts"
   //% group="Linea/Manuva" weight=5
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Advanced" weight=90
@@ -442,7 +442,7 @@ namespace Robobox {
       MotorRun(0x3, -speed_custom_l-trim_r);
       MotorRun(0x4, -speed_custom_l-trim_r);
   }
-  //% blockId=robotbit_Beebot_klinks block="Fahren Kurve links"
+  //% blockId=robotbit_Beebot_klinks_adv block="Fahren Kurve links"
     //% group="Linea/Manuva" weight=4
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% subcategory="Fahren Advanced" weight=90
@@ -452,7 +452,7 @@ namespace Robobox {
 
   }
     
-   //% blockId=robotbit_Beebot_rechts block="Drehen rechts"
+   //% blockId=robotbit_Beebot_rechts_adv block="Drehen rechts"
   //% group="Linea/Manuva" weight=3
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Advanced" weight=90
@@ -463,7 +463,7 @@ namespace Robobox {
     MotorRun(0x4, speed_custom_l-trim_r);
 
   }
-//% blockId=robotbit_Beebot_links block="Drehen links"
+//% blockId=robotbit_Beebot_links_adv block="Drehen links"
   //% group="Linea/Manuva" weight=2
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Advanced" weight=90
@@ -475,7 +475,7 @@ namespace Robobox {
 }
   
 
-  //% blockId=robotbit_Beebot_krechts block="Fahren Kurve rechts"
+  //% blockId=robotbit_Beebot_krechts_adv block="Fahren Kurve rechts"
     //% group="Linea/Manuva" weight=1
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% subcategory="Fahren Advanced" weight=90
@@ -485,7 +485,7 @@ namespace Robobox {
 
   }
   
-   //% blockId=robotbit_Manuva_linksvordiag block="Diagonal Links Vor"
+   //% blockId=robotbit_Manuva_linksvordiag_adv block="Diagonal Links Vor"
     //% group="Manuva" weight=110
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% subcategory="Fahren Advanced" weight=110
@@ -493,7 +493,7 @@ namespace Robobox {
       MotorRun(0x1, speed_custom_r-trim_l);
       MotorRun(0x3, speed_custom_l-trim_r);
   }
-   //% blockId=robotbit_Manuva_rechtsvordiag block="Diagonal Rechts Vors"
+   //% blockId=robotbit_Manuva_rechtsvordiag_adv block="Diagonal Rechts Vors"
   //% group="Manuva" weight=110
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Advanced" weight=110
@@ -501,7 +501,7 @@ namespace Robobox {
       MotorRun(0x2, speed_custom_r-trim_l);
       MotorRun(0x4, speed_custom_l-trim_r);
   }
-   //% blockId=robotbit_Manuva_linksrueckdiag block="Diagonal Links Zurück"
+   //% blockId=robotbit_Manuva_linksrueckdiag_adv block="Diagonal Links Zurück"
   //% group="Manuva" weight=110
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Advanced" weight=110
@@ -509,7 +509,7 @@ namespace Robobox {
       MotorRun(0x2, -speed_custom_r-trim_l);
       MotorRun(0x4, -speed_custom_l-trim_r);
   }
-   //% blockId=robotbit_Manuva_rechtsrueckdiag block="Diagonal Rechts Zurück"
+   //% blockId=robotbit_Manuva_rechtsrueckdiag_adv block="Diagonal Rechts Zurück"
   //% group="Manuva" weight=110
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Advanced" weight=110
@@ -518,7 +518,7 @@ namespace Robobox {
       MotorRun(0x3, -speed_custom_l-trim_r);
 
   }
-   //% blockId=robotbit_Manuva_rechtsschieben block="Fahren rechts"
+   //% blockId=robotbit_Manuva_rechtsschieben_adv block="Fahren rechts"
   //% group="Manuva" weight=110
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Advanced" weight=110
@@ -528,7 +528,7 @@ namespace Robobox {
     MotorRun(0x3, speed_custom_l-trim_r);
     MotorRun(0x4, -speed_custom_l-trim_r);
   }
-   //% blockId=robotbit_Manuva_linksschieben block="Fahren links"
+   //% blockId=robotbit_Manuva_linksschieben_adv block="Fahren links"
   //% group="Manuva" weight=110
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Advanced" weight=110
