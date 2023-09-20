@@ -387,15 +387,170 @@ namespace Robobox {
  
   
   /*#############################################################################Fahren Basic ENDE###############################################*/
+      /*#############################################################################Fahren Advanced START###############################################*/
+   /**
+   * @param speed_c value of the speed between 1 and 100. eg: 100 */
+//% blockId=setSpeed_custom block="Geschwindigkeit %speed_c|%"
+  //% speed_c.min=1 speed_c.max=100
+  //% group="Setup" weight=1
+  //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+  //% subcategory="Fahren Advanced" weight=90
+  export function setCustomSpeed_a(speed_c: number = 100): void {
+    speed_custom_l = Math.map(speed_c, 1, 100, 90, 255)
+    speed_custom_r = Math.map(speed_c, 1, 100, 90, 255)
+  }
+     /**
+   * @param trim_l_block value of the speed between 1 and 10. eg: 10 */
+//% blockId=trim_l_block block="Trimmen links %trim_l_block|%"
+  //% trim_l_block.min=0 trim_l_block.max=100
+  //% group="Setup" weight=1
+  //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+  //% subcategory="Fahren Advanced" weight=90
+  export function settriml_a(trim_l_block: number = 1): void {
+    trim_l = trim_l_block;
+  }
+
+    /**
+   * @param trim_r_block value of the speed between 1 and 10. eg: 10 */
+//% blockId=trim_r_block block="Trimmen rechts %trim_r_block|%"
+  //% trim_r_block.min=0 trim_r_block.max=100
+  //% group="Setup" weight=1
+  //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+  //% subcategory="Fahren Advanced" weight=90
+  export function settrimr_a(trim_r_block: number = 1): void {
+    trim_r = trim_r_block;
+  }
+ 
+    //% blockId=robotbit_Beebot_vor block="Fahren vorwärts |Dauer %delay|ms"
+    //% group="Linea/Manuva" weight=6
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    //% subcategory="Fahren Advanced" weight=90
+    export function BeeVor_a(): void {
+      MotorRun(0x1, speed_custom_r-trim_l);
+      MotorRun(0x2, speed_custom_r-trim_l);
+      MotorRun(0x3, speed_custom_l-trim_r);
+      MotorRun(0x4, speed_custom_l-trim_r);
+
+  }
+    //% blockId=robotbit_Beebot_zur block="Fahren rückwärts |Dauer %delay|ms"
+  //% group="Linea/Manuva" weight=5
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+  //% subcategory="Fahren Advanced" weight=90
+  export function BeeZur_a(): void {
+      MotorRun(0x1, -speed_custom_r-trim_l);
+      MotorRun(0x2, -speed_custom_r-trim_l);
+      MotorRun(0x3, -speed_custom_l-trim_r);
+      MotorRun(0x4, -speed_custom_l-trim_r);
+  }
+  //% blockId=robotbit_Beebot_klinks block="Fahren Kurve links |Dauer %delay|ms"
+    //% group="Linea/Manuva" weight=4
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    //% subcategory="Fahren Advanced" weight=90
+    export function BeeKurveLinks_a(): void {
+      MotorRun(0x1, speed_custom_r-trim_l);
+      MotorRun(0x2, speed_custom_r-trim_l);
+
+  }
+    
+   //% blockId=robotbit_Beebot_rechts block="Drehen rechts |Dauer %delay|ms"
+  //% group="Linea/Manuva" weight=3
+  //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+  //% subcategory="Fahren Advanced" weight=90
+  export function BeeRechts_a(): void {
+    MotorRun(0x1, -speed_custom_r-trim_l);
+    MotorRun(0x2, -speed_custom_r-trim_l);
+    MotorRun(0x3, speed_custom_l-trim_r);
+    MotorRun(0x4, speed_custom_l-trim_r);
+
+  }
+//% blockId=robotbit_Beebot_links block="Drehen links |Dauer %delay|ms"
+  //% group="Linea/Manuva" weight=2
+  //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+  //% subcategory="Fahren Advanced" weight=90
+  export function BeeLinks_a(): void {
+    MotorRun(0x1, speed_custom_r-trim_l);
+    MotorRun(0x2, speed_custom_r-trim_l);
+    MotorRun(0x3, -speed_custom_l-trim_r);
+    MotorRun(0x4, -speed_custom_l-trim_r);
+}
+  
+
+  //% blockId=robotbit_Beebot_krechts block="Fahren Kurve rechts |Dauer %delay|ms"
+    //% group="Linea/Manuva" weight=1
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    //% subcategory="Fahren Advanced" weight=90
+    export function BeeKurveRechts_a(): void {
+      MotorRun(0x3, speed_custom_l-trim_r);
+      MotorRun(0x4, speed_custom_l-trim_r);
+
+  }
+  
+   //% blockId=robotbit_Manuva_linksvordiag block="Diagonal Links Vor |Dauer %delay|ms"
+    //% group="Manuva" weight=110
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    //% subcategory="Fahren Advanced" weight=110
+    export function Manuvalvd_a(): void {
+      MotorRun(0x1, speed_custom_r-trim_l);
+      MotorRun(0x3, speed_custom_l-trim_r);
+  }
+   //% blockId=robotbit_Manuva_rechtsvordiag block="Diagonal Rechts Vor |Dauer %delay|ms"
+  //% group="Manuva" weight=110
+  //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+  //% subcategory="Fahren Advanced" weight=110
+  export function Manuvarvd_a(): void {
+      MotorRun(0x2, speed_custom_r-trim_l);
+      MotorRun(0x4, speed_custom_l-trim_r);
+  }
+   //% blockId=robotbit_Manuva_linksrueckdiag block="Diagonal Links Zurück |Dauer %delay|ms"
+  //% group="Manuva" weight=110
+  //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+  //% subcategory="Fahren Advanced" weight=110
+  export function Manuvalrd_a(): void {
+      MotorRun(0x2, -speed_custom_r-trim_l);
+      MotorRun(0x4, -speed_custom_l-trim_r);
+  }
+   //% blockId=robotbit_Manuva_rechtsrueckdiag block="Diagonal Rechts Zurück |Dauer %delay|ms"
+  //% group="Manuva" weight=110
+  //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+  //% subcategory="Fahren Advanced" weight=110
+  export function Manuvarrd_a(): void {
+      MotorRun(0x1, -speed_custom_r-trim_l);
+      MotorRun(0x3, -speed_custom_l-trim_r);
+
+  }
+   //% blockId=robotbit_Manuva_rechtsschieben block="Fahren rechts |Dauer %delay|ms"
+  //% group="Manuva" weight=110
+  //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+  //% subcategory="Fahren Advanced" weight=110
+  export function Manuvarrs_a(): void {
+    MotorRun(0x1, speed_custom_r-trim_l);
+    MotorRun(0x2, -speed_custom_r-trim_l);
+    MotorRun(0x3, speed_custom_l-trim_r);
+    MotorRun(0x4, -speed_custom_l-trim_r);
+  }
+   //% blockId=robotbit_Manuva_linksschieben block="Fahren links |Dauer %delay|ms"
+  //% group="Manuva" weight=110
+  //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+  //% subcategory="Fahren Advanced" weight=110
+  export function Manuvarls_a(): void {
+    MotorRun(0x1, -speed_custom_r-trim_l);
+    MotorRun(0x2, speed_custom_r-trim_l);
+    MotorRun(0x3, -speed_custom_l-trim_r);
+    MotorRun(0x4, speed_custom_l-trim_r);
+
+}
+ 
+  
+  /*#############################################################################Fahren Advanced ENDE###############################################*/
 
 
-  /*#############################################################################Fahren Advanced Anfang###############################################*/
+  /*#############################################################################Fahren Expert Anfang###############################################*/
 
   
     //% blockId=robotbit_motor_run block="Motor|%index|Geschwindigkeit %speed"
     //% group="Motor" weight=120
     //% speed.min=-100 speed.max=100
-    //% subcategory="Fahren Advanced" weight=120
+    //% subcategory="Fahren Expert" weight=120
     export function MotorRun(index: Motors, speed: number): void {
       if (!initialized) {
           initPCA9685()
@@ -433,7 +588,7 @@ namespace Robobox {
   //% group="Motor" weight=120
   //% speed1.min=-100 speed1.max=100
   //% speed2.min=-100 speed2.max=100
-  //% subcategory="Fahren Advanced" weight=120
+  //% subcategory="Fahren Expert" weight=120
   
   export function MotorRunDual(motor1: Motors, speed1: number, motor2: Motors, speed2: number): void {
       MotorRun(motor1, speed1);
@@ -450,7 +605,7 @@ namespace Robobox {
   //% group="Motor" weight=120
   //%blockGap=8
   //% speed.min=-0 speed.max=100
-  //% subcategory="Fahren Advanced" weight=120
+  //% subcategory="Fahren Expert" weight=120
   export function MotorRunDelay(index: Motors, speed: number, delay: number): void {
       MotorRun(index, speed);
       basic.pause(delay); 
@@ -461,7 +616,7 @@ namespace Robobox {
 
   //% blockId=robotbit_stop block="Motor stoppen|%index|"
   //% group="Motor" weight=120
-  //% subcategory="Fahren Advanced" weight=120
+  //% subcategory="Fahren Expert" weight=120
   export function MotorStop(index: Motors): void {
       MotorRun(index, 0);
   }
@@ -469,7 +624,7 @@ namespace Robobox {
   //% blockId=robotbit_stop_all block="Alle Motoren stoppen"
   //% group="Motor" weight=120
   //% blockGap=50
-  //% subcategory="Fahren Advanced" weight=120
+  //% subcategory="Fahren Expert" weight=120
   export function MotorStopAll(): void {
       if (!initialized) {
           initPCA9685()
@@ -478,7 +633,7 @@ namespace Robobox {
           stopMotor(idx);
       }
   }
-  /*#############################################################################Fahren Advanced ENDE###############################################*/
+  /*#############################################################################Fahren Expert ENDE###############################################*/
 
   /*#############################################################################Stift ANFANG###############################################*/
 /**
