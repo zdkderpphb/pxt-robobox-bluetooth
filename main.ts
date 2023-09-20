@@ -543,7 +543,7 @@ namespace Robobox {
   //% group="Motoren stoppen" weight=1
   //% blockGap=50
   //% subcategory="Fahren Advanced" weight=95
-  export function MotorStopAll(): void {
+  export function MotorStopAll_adv(): void {
       if (!initialized) {
           initPCA9685()
       }
