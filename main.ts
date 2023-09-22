@@ -228,7 +228,7 @@ namespace Robobox {
   }
      /**
    * @param trim_l_block value of the speed between 1 and 10. eg: 10 */
-//% blockId=trim_l_block block="Trimmen links %trim_l_block|%"
+//% blockId=trim_l_block block="Trimmen rechts %trim_l_block|%"
   //% trim_l_block.min=0 trim_l_block.max=100
   //% group="Setup" weight=1
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
@@ -239,7 +239,7 @@ namespace Robobox {
 
     /**
    * @param trim_r_block value of the speed between 1 and 10. eg: 10 */
-//% blockId=trim_r_block block="Trimmen rechts %trim_r_block|%"
+//% blockId=trim_r_block block="Trimmen links %trim_r_block|%"
   //% trim_r_block.min=0 trim_r_block.max=100
   //% group="Setup" weight=1
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
