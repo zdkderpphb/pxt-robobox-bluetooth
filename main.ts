@@ -101,9 +101,8 @@ namespace Robobox {
     let neoStrip: neopixel.Strip;
     let matBuf = pins.createBuffer(17);
   let distanceBuf = 0;
-  let speed_custom = 80;
-     let speed_custom_l = 80;
-     let speed_custom_r = 80;
+     let speed_custom_l = 255;
+     let speed_custom_r = 255;
   let trim_l = 0;
     let trim_r = 0;
 
@@ -600,7 +599,7 @@ namespace Robobox {
   //% group="Motor" weight=120
   //% speed1.min=-100 speed1.max=100
   //% speed2.min=-100 speed2.max=100
-  //% subcategory="Fahren Expert" weight=95
+  //% subcategory="Fahren Expert (Experimentiell)" weight=95
   
   export function MotorRunDual(motor1: Motors, speed1: number, motor2: Motors, speed2: number): void {
       MotorRun(motor1, speed1);
@@ -617,7 +616,7 @@ namespace Robobox {
   //% group="Motor" weight=120
   //%blockGap=8
   //% speed.min=-0 speed.max=100
-  //% subcategory="Fahren Expert" weight=95
+  //% subcategory="Fahren Expert (Experimentiell)" weight=95
   export function MotorRunDelay(index: Motors, speed: number, delay: number): void {
       MotorRun(index, speed);
       basic.pause(delay); 
@@ -636,7 +635,7 @@ namespace Robobox {
   //% blockId=robotbit_stop_all block="Alle Motoren stoppen"
   //% group="Motor" weight=120
   //% blockGap=50
-  //% subcategory="Fahren Expert" weight=95
+  //% subcategory="Fahren Expert (Experimentiell)" weight=95
   export function MotorStopAll(): void {
       if (!initialized) {
           initPCA9685()
