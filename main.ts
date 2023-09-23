@@ -265,10 +265,10 @@ namespace Robobox {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Basic" weight=90
   export function BeeZur(delay: number): void {
-      MotorRun(0x1, -speed_custom_r-trim_l);
-      MotorRun(0x2, -speed_custom_r-trim_l);
-      MotorRun(0x3, -speed_custom_l-trim_r);
-      MotorRun(0x4, -speed_custom_l-trim_r);
+      MotorRun(0x1, -speed_custom_r+trim_l);
+      MotorRun(0x2, -speed_custom_r+trim_l);
+      MotorRun(0x3, -speed_custom_l+trim_r);
+      MotorRun(0x4, -speed_custom_l+trim_r);
       basic.pause(delay);
       MotorStopAll()
   }
@@ -288,8 +288,8 @@ namespace Robobox {
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Basic" weight=90
   export function BeeRechts(delay: number): void {
-    MotorRun(0x1, -speed_custom_r-trim_l);
-    MotorRun(0x2, -speed_custom_r-trim_l);
+    MotorRun(0x1, -speed_custom_r+trim_l);
+    MotorRun(0x2, -speed_custom_r+trim_l);
     MotorRun(0x3, speed_custom_l-trim_r);
     MotorRun(0x4, speed_custom_l-trim_r);
     basic.pause(delay);
@@ -302,8 +302,8 @@ namespace Robobox {
   export function BeeLinks(delay: number): void {
     MotorRun(0x1, speed_custom_r-trim_l);
     MotorRun(0x2, speed_custom_r-trim_l);
-    MotorRun(0x3, -speed_custom_l-trim_r);
-    MotorRun(0x4, -speed_custom_l-trim_r);
+    MotorRun(0x3, -speed_custom_l+trim_r);
+    MotorRun(0x4, -speed_custom_l+trim_r);
     basic.pause(delay);
     MotorStopAll()
 }
@@ -345,8 +345,8 @@ namespace Robobox {
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Basic" weight=110
   export function Manuvalrd(delay: number): void {
-      MotorRun(0x2, -speed_custom_r-trim_l);
-      MotorRun(0x4, -speed_custom_l-trim_r);
+      MotorRun(0x2, -speed_custom_r+trim_l);
+      MotorRun(0x4, -speed_custom_l+trim_r);
       basic.pause(delay);
       MotorStopAll()
   }
@@ -355,8 +355,8 @@ namespace Robobox {
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Basic" weight=110
   export function Manuvarrd(delay: number): void {
-      MotorRun(0x1, -speed_custom_r-trim_l);
-      MotorRun(0x3, -speed_custom_l-trim_r);
+      MotorRun(0x1, -speed_custom_r+trim_l);
+      MotorRun(0x3, -speed_custom_l+trim_r);
       basic.pause(delay);
       MotorStopAll()
   }
@@ -365,9 +365,9 @@ namespace Robobox {
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Basic" weight=110
   export function Manuvarrs(delay: number): void {
-    MotorRun(0x1, -speed_custom_r-trim_l);
+    MotorRun(0x1, -speed_custom_r+trim_l);
     MotorRun(0x2, speed_custom_r-trim_l);
-    MotorRun(0x3, -speed_custom_l-trim_r);
+    MotorRun(0x3, -speed_custom_l+trim_r);
     MotorRun(0x4, speed_custom_l-trim_r);
     basic.pause(delay);
     MotorStopAll()
@@ -378,9 +378,9 @@ namespace Robobox {
   //% subcategory="Fahren Basic" weight=110
   export function Manuvarls(delay: number): void {
     MotorRun(0x1, speed_custom_r-trim_l);
-    MotorRun(0x2, -speed_custom_r-trim_l);
+    MotorRun(0x2, -speed_custom_r+trim_l);
     MotorRun(0x3, speed_custom_l-trim_r);
-    MotorRun(0x4, -speed_custom_l-trim_r);
+    MotorRun(0x4, -speed_custom_l+trim_r);
     basic.pause(delay);
     MotorStopAll()
 }
@@ -437,10 +437,10 @@ namespace Robobox {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Advanced" weight=90
   export function BeeZur_a(): void {
-      MotorRun(0x1, -speed_custom_r-trim_l);
-      MotorRun(0x2, -speed_custom_r-trim_l);
-      MotorRun(0x3, -speed_custom_l-trim_r);
-      MotorRun(0x4, -speed_custom_l-trim_r);
+      MotorRun(0x1, -speed_custom_r+trim_l);
+      MotorRun(0x2, -speed_custom_r+trim_l);
+      MotorRun(0x3, -speed_custom_l+trim_r);
+      MotorRun(0x4, -speed_custom_l+trim_r);
   }
   //% blockId=robotbit_Beebot_klinks_adv block="Fahren Kurve links"
     //% group="Linea/Manuva" weight=4
@@ -457,8 +457,8 @@ namespace Robobox {
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Advanced" weight=90
   export function BeeRechts_a(): void {
-    MotorRun(0x1, -speed_custom_r-trim_l);
-    MotorRun(0x2, -speed_custom_r-trim_l);
+    MotorRun(0x1, -speed_custom_r+trim_l);
+    MotorRun(0x2, -speed_custom_r+trim_l);
     MotorRun(0x3, speed_custom_l-trim_r);
     MotorRun(0x4, speed_custom_l-trim_r);
 
@@ -470,8 +470,8 @@ namespace Robobox {
   export function BeeLinks_a(): void {
     MotorRun(0x1, speed_custom_r-trim_l);
     MotorRun(0x2, speed_custom_r-trim_l);
-    MotorRun(0x3, -speed_custom_l-trim_r);
-    MotorRun(0x4, -speed_custom_l-trim_r);
+    MotorRun(0x3, -speed_custom_l+trim_r);
+    MotorRun(0x4, -speed_custom_l+trim_r);
 }
   
 
@@ -506,16 +506,16 @@ namespace Robobox {
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Advanced" weight=110
   export function Manuvalrd_a(): void {
-      MotorRun(0x2, -speed_custom_r-trim_l);
-      MotorRun(0x4, -speed_custom_l-trim_r);
+      MotorRun(0x2, -speed_custom_r+trim_l);
+      MotorRun(0x4, -speed_custom_l+trim_r);
   }
    //% blockId=robotbit_Manuva_rechtsrueckdiag_adv block="Diagonal Rechts Zurück"
   //% group="Manuva" weight=110
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Advanced" weight=110
   export function Manuvarrd_a(): void {
-      MotorRun(0x1, -speed_custom_r-trim_l);
-      MotorRun(0x3, -speed_custom_l-trim_r);
+      MotorRun(0x1, -speed_custom_r+trim_l);
+      MotorRun(0x3, -speed_custom_l+trim_r);
 
   }
    //% blockId=robotbit_Manuva_rechtsschieben_adv block="Fahren rechts"
@@ -523,9 +523,9 @@ namespace Robobox {
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Advanced" weight=110
   export function Manuvarrs_a(): void {
-    MotorRun(0x1, -speed_custom_r-trim_l);
+    MotorRun(0x1, -speed_custom_r+trim_l);
     MotorRun(0x2, speed_custom_r-trim_l);
-    MotorRun(0x3, -speed_custom_l-trim_r);
+    MotorRun(0x3, -speed_custom_l+trim_r);
     MotorRun(0x4, speed_custom_l-trim_r);
   }
    //% blockId=robotbit_Manuva_linksschieben_adv block="Fahren links"
@@ -534,9 +534,9 @@ namespace Robobox {
   //% subcategory="Fahren Advanced" weight=110
   export function Manuvarls_a(): void {
     MotorRun(0x1, speed_custom_r-trim_l);
-    MotorRun(0x2, -speed_custom_r-trim_l);
+    MotorRun(0x2, -speed_custom_r+trim_l);
     MotorRun(0x3, speed_custom_l-trim_r);
-    MotorRun(0x4, -speed_custom_l-trim_r);
+    MotorRun(0x4, -speed_custom_l+trim_r);
 
 }
     //% blockId=robotbit_stop_all_adv block="Alle Motoren stoppen"
@@ -562,7 +562,7 @@ namespace Robobox {
     //% blockId=robotbit_motor_run block="Motor|%index|Geschwindigkeit %speed"
     //% group="Motor" weight=120
     //% speed.min=-100 speed.max=100
-    //% subcategory="Fahren Expert" weight=95
+    //% subcategory="Fahren Expert (Experimentiell)" weight=95
     export function MotorRun(index: Motors, speed: number): void {
       if (!initialized) {
           initPCA9685()
