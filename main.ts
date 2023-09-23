@@ -627,7 +627,7 @@ namespace Robobox {
 
   //% blockId=robotbit_stop block="Motor stoppen|%index|"
   //% group="Motor" weight=120
-  //% subcategory="Fahren Expert" weight=95
+  //% subcategory="Fahren Expert (Experimentiell)" weight=95
   export function MotorStop(index: Motors): void {
       MotorRun(index, 0);
   }
