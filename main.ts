@@ -663,12 +663,12 @@ namespace Robobox {
     //% degree.min=0 degree.max=180
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
      //% subcategory="Stift" weight=100
-     export function Stift_rauf_adv(aufab: Stift_Bewegung, index: Servos): void {
+     export function Stift_rauf_adv(stift_index: Stift_Bewegung, index: Servos): void {
     let winkel = 50;
-      if(aufab == "0") {
+      if(stift_index == 0) {
            winkel = 50;
          } 
-          else if (aufab == "1") {
+          else if (stift_index == 1) {
            winkel = 90;
             }
          basic.showNumber(winkel);
