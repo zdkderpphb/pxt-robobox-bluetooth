@@ -665,13 +665,13 @@ namespace Robobox {
      //% subcategory="Stift" weight=100
      export function Stift_rauf_adv(aufab: Stift_Bewegung, index: Servos): void {
     let winkel = 50;
-      if(aufab == 0) {
+      if(aufab == "0") {
            winkel = 50;
          } 
-          else if (aufab == 1) {
+          else if (aufab == "1") {
            winkel = 90;
             }
-         basic.showNumber(winkel)
+         basic.showNumber(winkel);
       if (!initialized) {
           initPCA9685()
       }
