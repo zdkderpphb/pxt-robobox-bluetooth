@@ -671,7 +671,7 @@ namespace Robobox {
           else if (stift_index == 1) {
            winkel = 90;
             }
-         basic.showNumber(winkel);
+         
       if (!initialized) {
           initPCA9685()
       }
@@ -680,45 +680,7 @@ namespace Robobox {
       let value = v_us * 4096 / 20000
       setPwm(index + 7, 0, value)
   }
-  /**
-    /**
-     * Stift Execute
-     * @param index Servo Channel; eg: S1
-     * @param degree [0-180] degree of servo; eg: 0, 90, 180
-    */
-    //% blockId=robotbit_stift_rauf block="Stift rauf|%index"
-    //% group="Linea" weight=100
-    //% degree.min=0 degree.max=180
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-     //% subcategory="Stift" weight=100
-     export function Stift_rauf(index: Servos): void {
-      if (!initialized) {
-          initPCA9685()
-      }
-      // 50hz: 20,000 us
-      let v_us = (50 * 1800 / 180 + 600) // 0.6 ~ 2.4
-      let value = v_us * 4096 / 20000
-      setPwm(index + 7, 0, value)
-  }
-  /**
-   * Stift Execute
-   * @param index Servo Channel; eg: S1
-   * @param degree [0-180] degree of servo; eg: 0, 90, 180
-  */
-  //% blockId=robotbit_stift_runter block="Stift runter|%index"
-  //% group="Linea" weight=100
-  //% degree.min=0 degree.max=180
-  //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-   //% subcategory="Stift" weight=100
-  export function Stift_runter(index: Servos): void {
-      if (!initialized) {
-          initPCA9685()
-      }
-      // 50hz: 20,000 us
-      let v_us = (90 * 1800 / 180 + 600) // 0.6 ~ 2.4
-      let value = v_us * 4096 / 20000
-      setPwm(index + 7, 0, value) 
-  }
+  
   /*#############################################################################Stift ENDE###############################################*/
   
       
