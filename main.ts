@@ -95,6 +95,7 @@ namespace Robobox {
         //% blockId="T5B0" block="5"
         T5B0 = 1800
     }
+    
 
     let initialized = false
     let initializedMatrix = false
@@ -221,7 +222,7 @@ namespace Robobox {
   //% group="Setup" weight=1
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Basic" weight=90
-  export function setCustomSpeed(speed_c: number = 100): void {
+  export function setCustomSpeed(speed_c: number): void {
     speed_custom_l = Math.map(speed_c, 1, 100, 90, 255)
     speed_custom_r = Math.map(speed_c, 1, 100, 90, 255)
   }
@@ -232,7 +233,7 @@ namespace Robobox {
   //% group="Setup" weight=1
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Basic" weight=90
-  export function settriml(trim_l_block: number = 1): void {
+  export function settriml(trim_l_block: number): void {
     trim_l = trim_l_block;
   }
 
@@ -243,7 +244,7 @@ namespace Robobox {
   //% group="Setup" weight=1
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Basic" weight=90
-  export function settrimr(trim_r_block: number = 1): void {
+  export function settrimr(trim_r_block: number): void {
     trim_r = trim_r_block;
   }
  
