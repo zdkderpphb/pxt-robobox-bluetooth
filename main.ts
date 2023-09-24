@@ -663,7 +663,7 @@ namespace Robobox {
     //% degree.min=0 degree.max=180
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
      //% subcategory="Stift" weight=100
-     export function Stift_rauf_adv(stift_index: Stift_Bewegung, index: Servos): void {
+     export function Stift_rauf_adv(index: Servos, stift_index: Stift_Bewegung): void {
     let winkel = 50;
       if(stift_index == 0) {
            winkel = 50;
