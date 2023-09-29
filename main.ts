@@ -325,6 +325,7 @@ namespace Robobox {
     MotorStopAll() 
         
     }
+  }
 
   
    //% blockId=robotbit_Manuva_linksvordiag block="Diagonal Links Vor |Dauer %delay|ms"
