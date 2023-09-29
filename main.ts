@@ -100,6 +100,11 @@ namespace Robobox {
         auf = 0,
         ab = 1
     }
+
+     export enum vor_zurueck_bewegung {
+        vor = 0,
+        zurueck = 1
+    }
     
 
     let initialized = false
@@ -253,17 +258,28 @@ namespace Robobox {
     trim_r = trim_r_block;
   }
  
-    //% blockId=robotbit_Beebot_vor block="Fahren vorwärts |Dauer %delay|ms"
+    //% blockId=robotbit_Beebot_vor block="Fahren %vorzur_index |Dauer %delay|ms"
     //% group="Linea/Manuva" weight=6
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% subcategory="Fahren Basic" weight=90
-    export function BeeVor(delay: number): void {
+    //export function BeeVor(delay: number): void {
+     export function BeeVor(delay: number, vorzur_index: vor_zurueck_bewegung): void {
+      if(vorzur_index == 0) {
       MotorRun(0x1, speed_custom_r-trim_l);
       MotorRun(0x2, speed_custom_r-trim_l);
       MotorRun(0x3, speed_custom_l-trim_r);
       MotorRun(0x4, speed_custom_l-trim_r);
       basic.pause(delay);
-      MotorStopAll()
+      MotorStopAll() }
+         else {
+     MotorRun(0x1, -speed_custom_r+trim_l);
+      MotorRun(0x2, -speed_custom_r+trim_l);
+      MotorRun(0x3, -speed_custom_l+trim_r);
+      MotorRun(0x4, -speed_custom_l+trim_r);
+      basic.pause(delay);
+      MotorStopAll()        
+         }
+         
   }
     //% blockId=robotbit_Beebot_zur block="Fahren rückwärts |Dauer %delay|ms"
   //% group="Linea/Manuva" weight=5
