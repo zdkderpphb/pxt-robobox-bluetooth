@@ -328,70 +328,67 @@ namespace Robobox {
   }
 
   
-   //% blockId=robotbit_Manuva_linksvordiag block="Diagonal Links Vor |Dauer %delay|ms"
+   //% blockId=robotbit_Manuva_linksvordiag block="Diagonal %links_rechts_index Vor |Dauer %delay|ms"
     //% group="Manuva" weight=110
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% subcategory="Fahren Basic" weight=110
-    export function Manuvalvd(delay: number): void {
-      MotorRun(0x1, speed_custom_r-trim_l);
+    export function Manuvalvd(links_rechts_index: links_rechts_bewegung, delay: number ): void {
+      if(links_rechts_index == 0) {
+        MotorRun(0x1, speed_custom_r-trim_l);
       MotorRun(0x3, speed_custom_l-trim_r);
       basic.pause(delay);
       MotorStopAll()
-  }
-   //% blockId=robotbit_Manuva_rechtsvordiag block="Diagonal Rechts Vor |Dauer %delay|ms"
-  //% group="Manuva" weight=110
-  //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-  //% subcategory="Fahren Basic" weight=110
-  export function Manuvarvd(delay: number): void {
-      MotorRun(0x2, speed_custom_r-trim_l);
+      } else {
+           MotorRun(0x2, speed_custom_r-trim_l);
       MotorRun(0x4, speed_custom_l-trim_r);
       basic.pause(delay);
       MotorStopAll()
+      }
   }
-   //% blockId=robotbit_Manuva_linksrueckdiag block="Diagonal Links Zurück |Dauer %delay|ms"
+   
+   //% blockId=robotbit_Manuva_linksrueckdiag block="Diagonal %links_rechts_index Zurück |Dauer %delay|ms"
   //% group="Manuva" weight=110
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Basic" weight=110
-  export function Manuvalrd(delay: number): void {
+    export function Manuvalrd(links_rechts_index: links_rechts_bewegung, delay: number ): void {
+        if(links_rechts_index == 0) {
       MotorRun(0x2, -speed_custom_r+trim_l);
       MotorRun(0x4, -speed_custom_l+trim_r);
       basic.pause(delay);
       MotorStopAll()
-  }
-   //% blockId=robotbit_Manuva_rechtsrueckdiag block="Diagonal Rechts Zurück |Dauer %delay|ms"
-  //% group="Manuva" weight=110
-  //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-  //% subcategory="Fahren Basic" weight=110
-  export function Manuvarrd(delay: number): void {
+        } else {
       MotorRun(0x1, -speed_custom_r+trim_l);
       MotorRun(0x3, -speed_custom_l+trim_r);
       basic.pause(delay);
       MotorStopAll()
+        }
   }
-   //% blockId=robotbit_Manuva_rechtsschieben block="Fahren rechts |Dauer %delay|ms"
+   
+   //% blockId=robotbit_Manuva_rechtsschieben block="Fahren %links_rechts_index |Dauer %delay|ms"
   //% group="Manuva" weight=110
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Basic" weight=110
-  export function Manuvarrs(delay: number): void {
-    MotorRun(0x1, -speed_custom_r+trim_l);
-    MotorRun(0x2, speed_custom_r-trim_l);
-    MotorRun(0x3, -speed_custom_l+trim_r);
-    MotorRun(0x4, speed_custom_l-trim_r);
-    basic.pause(delay);
-    MotorStopAll()
-  }
-   //% blockId=robotbit_Manuva_linksschieben block="Fahren links |Dauer %delay|ms"
-  //% group="Manuva" weight=110
-  //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-  //% subcategory="Fahren Basic" weight=110
-  export function Manuvarls(delay: number): void {
+
+ export function Manuvarrs(links_rechts_index: links_rechts_bewegung, delay: number ): void {
+      if(links_rechts_index == 0) {
     MotorRun(0x1, speed_custom_r-trim_l);
     MotorRun(0x2, -speed_custom_r+trim_l);
     MotorRun(0x3, speed_custom_l-trim_r);
     MotorRun(0x4, -speed_custom_l+trim_r);
     basic.pause(delay);
     MotorStopAll()
-}
+      }
+     else {
+         
+    MotorRun(0x1, -speed_custom_r+trim_l);
+    MotorRun(0x2, speed_custom_r-trim_l);
+    MotorRun(0x3, -speed_custom_l+trim_r);
+    MotorRun(0x4, speed_custom_l-trim_r);
+    basic.pause(delay);
+    MotorStopAll()
+     }
+  }
+   
  
   
   /*#############################################################################Fahren Basic ENDE###############################################*/
