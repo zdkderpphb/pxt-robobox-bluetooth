@@ -105,6 +105,10 @@ namespace Robobox {
         vor = 0,
         zurueck = 1
     }
+      export enum links_rechts_bewegung {
+        links = 0,
+        rechts = 1
+    }
     
 
     let initialized = false
@@ -281,65 +285,47 @@ namespace Robobox {
          }
          
   }
-    //% blockId=robotbit_Beebot_zur block="Fahren rückwärts |Dauer %delay|ms"
-  //% group="Linea/Manuva" weight=5
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-  //% subcategory="Fahren Basic" weight=90
-  export function BeeZur(delay: number): void {
-      MotorRun(0x1, -speed_custom_r+trim_l);
-      MotorRun(0x2, -speed_custom_r+trim_l);
-      MotorRun(0x3, -speed_custom_l+trim_r);
-      MotorRun(0x4, -speed_custom_l+trim_r);
-      basic.pause(delay);
-      MotorStopAll()
-  }
-  //% blockId=robotbit_Beebot_klinks block="Fahren Kurve links |Dauer %delay|ms"
+    
+  //% blockId=robotbit_Beebot_klinks block="Fahren Kurve %links_rechts_index |Dauer %delay|ms"
     //% group="Linea/Manuva" weight=4
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% subcategory="Fahren Basic" weight=90
-    export function BeeKurveLinks(delay: number): void {
+    export function BeeKurveLinks(links_rechts_index: links_rechts_bewegung, delay: number ): void {
+      if(links_rechts_index == 0) {
       MotorRun(0x1, speed_custom_r-trim_l);
       MotorRun(0x2, speed_custom_r-trim_l);
       basic.pause(delay);
       MotorStopAll()
+      } else {
+      MotorRun(0x3, speed_custom_l-trim_r);
+      MotorRun(0x4, speed_custom_l-trim_r);
+      basic.pause(delay);
+      MotorStopAll()
+      }
   }
     
-   //% blockId=robotbit_Beebot_rechts block="Drehen rechts |Dauer %delay|ms"
+   //% blockId=robotbit_Beebot_rechts block="Drehen %links_rechts_index |Dauer %delay|ms"
   //% group="Linea/Manuva" weight=3
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Basic" weight=90
-  export function BeeRechts(delay: number): void {
-    MotorRun(0x1, -speed_custom_r+trim_l);
-    MotorRun(0x2, -speed_custom_r+trim_l);
-    MotorRun(0x3, speed_custom_l-trim_r);
-    MotorRun(0x4, speed_custom_l-trim_r);
-    basic.pause(delay);
-    MotorStopAll()
-  }
-//% blockId=robotbit_Beebot_links block="Drehen links |Dauer %delay|ms"
-  //% group="Linea/Manuva" weight=2
-  //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-  //% subcategory="Fahren Basic" weight=90
-  export function BeeLinks(delay: number): void {
+  export function BeeRechts(links_rechts_index: links_rechts_bewegung, delay: number ): void {
+    if(links_rechts_index == 0) {
     MotorRun(0x1, speed_custom_r-trim_l);
     MotorRun(0x2, speed_custom_r-trim_l);
     MotorRun(0x3, -speed_custom_l+trim_r);
     MotorRun(0x4, -speed_custom_l+trim_r);
     basic.pause(delay);
     MotorStopAll()
-}
-  
+    } else {
+    MotorRun(0x1, -speed_custom_r+trim_l);
+    MotorRun(0x2, -speed_custom_r+trim_l);
+    MotorRun(0x3, speed_custom_l-trim_r);
+    MotorRun(0x4, speed_custom_l-trim_r);
+    basic.pause(delay);
+    MotorStopAll() 
+        
+    }
 
-  //% blockId=robotbit_Beebot_krechts block="Fahren Kurve rechts |Dauer %delay|ms"
-    //% group="Linea/Manuva" weight=1
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    //% subcategory="Fahren Basic" weight=90
-    export function BeeKurveRechts(delay: number): void {
-      MotorRun(0x3, speed_custom_l-trim_r);
-      MotorRun(0x4, speed_custom_l-trim_r);
-      basic.pause(delay);
-      MotorStopAll()
-  }
   
    //% blockId=robotbit_Manuva_linksvordiag block="Diagonal Links Vor |Dauer %delay|ms"
     //% group="Manuva" weight=110
