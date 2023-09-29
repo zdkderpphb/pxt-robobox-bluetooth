@@ -221,7 +221,7 @@ namespace Robobox {
   
   /*#############################################################################Fahren Basic START###############################################*/
    /**
-   * @param speed_c value of the speed between 1 and 100. eg: 100 */
+   * @param speed_c value of the speed between 1 and 100. eg: 100
 //% blockId=setSpeed_custom block="Geschwindigkeit %speed_c|%"
   //% speed_c.min=1 speed_c.max=100
   //% group="Setup" weight=1
@@ -230,7 +230,7 @@ namespace Robobox {
   export function setCustomSpeed(speed_c: number): void {
     speed_custom_l = Math.map(speed_c, 1, 100, 90, 255)
     speed_custom_r = Math.map(speed_c, 1, 100, 90, 255)
-  }
+  } */
      /**
    * @param trim_l_block value of the speed between 1 and 10. eg: 10 */
 //% blockId=trim_l_block block="Trimmen rechts %trim_l_block|%"
