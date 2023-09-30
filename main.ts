@@ -426,26 +426,26 @@ namespace Robobox {
     trim_r = trim_r_block;
   }
  
-    //% blockId=robotbit_Beebot_vor_adv block="Fahren vorwärts"
+     //% blockId=robotbit_Beebot_vor_adv block="Fahren %vorzur_index"
     //% group="Linea/Manuva" weight=6
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% subcategory="Fahren Advanced" weight=90
-    export function BeeVor_a(): void {
+    //export function BeeVor(delay: number): void {
+     export function BeeVor(vorzur_index: vor_zurueck_bewegung): void {
+      if(vorzur_index == 0) {
       MotorRun(0x1, speed_custom_r-trim_l);
       MotorRun(0x2, speed_custom_r-trim_l);
       MotorRun(0x3, speed_custom_l-trim_r);
       MotorRun(0x4, speed_custom_l-trim_r);
-
-  }
-    //% blockId=robotbit_Beebot_zur_adv block="Fahren rückwärts"
-  //% group="Linea/Manuva" weight=5
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-  //% subcategory="Fahren Advanced" weight=90
-  export function BeeZur_a(): void {
-      MotorRun(0x1, -speed_custom_r+trim_l);
+ }
+         else {
+     MotorRun(0x1, -speed_custom_r+trim_l);
       MotorRun(0x2, -speed_custom_r+trim_l);
       MotorRun(0x3, -speed_custom_l+trim_r);
       MotorRun(0x4, -speed_custom_l+trim_r);
+       
+         }
+         
   }
   //% blockId=robotbit_Beebot_klinks_adv block="Fahren Kurve links"
     //% group="Linea/Manuva" weight=4
