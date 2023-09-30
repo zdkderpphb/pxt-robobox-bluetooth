@@ -431,7 +431,7 @@ namespace Robobox {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% subcategory="Fahren Advanced" weight=90
     //export function BeeVor(delay: number): void {
-     export function BeeVor(vorzur_index: vor_zurueck_bewegung): void {
+     export function BeeVor_adv(vorzur_index: vor_zurueck_bewegung): void {
       if(vorzur_index == 0) {
       MotorRun(0x1, speed_custom_r-trim_l);
       MotorRun(0x2, speed_custom_r-trim_l);
