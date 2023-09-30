@@ -447,103 +447,87 @@ namespace Robobox {
          }
          
   }
-  //% blockId=robotbit_Beebot_klinks_adv block="Fahren Kurve links"
+  //% blockId=robotbit_Beebot_klinks_adv block="Fahren Kurve %links_rechts_index"
     //% group="Linea/Manuva" weight=4
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% subcategory="Fahren Advanced" weight=90
-    export function BeeKurveLinks_a(): void {
+    export function BeeKurveLinks_a(links_rechts_index: links_rechts_bewegung): void {
+      if(links_rechts_index == 0) {
       MotorRun(0x1, speed_custom_r-trim_l);
       MotorRun(0x2, speed_custom_r-trim_l);
+      } else {
+      MotorRun(0x3, speed_custom_l-trim_r);
+      MotorRun(0x4, speed_custom_l-trim_r);
+      }
 
   }
     
-   //% blockId=robotbit_Beebot_rechts_adv block="Drehen rechts"
+   //% blockId=robotbit_Beebot_rechts_adv block="Drehen %links_rechts_index"
   //% group="Linea/Manuva" weight=3
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Advanced" weight=90
-  export function BeeRechts_a(): void {
-    MotorRun(0x1, -speed_custom_r+trim_l);
-    MotorRun(0x2, -speed_custom_r+trim_l);
-    MotorRun(0x3, speed_custom_l-trim_r);
-    MotorRun(0x4, speed_custom_l-trim_r);
-
-  }
-//% blockId=robotbit_Beebot_links_adv block="Drehen links"
-  //% group="Linea/Manuva" weight=2
-  //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-  //% subcategory="Fahren Advanced" weight=90
-  export function BeeLinks_a(): void {
+  export function BeeRechts_a(links_rechts_index: links_rechts_bewegung): void {
+   if(links_rechts_index == 0) {
     MotorRun(0x1, speed_custom_r-trim_l);
     MotorRun(0x2, speed_custom_r-trim_l);
     MotorRun(0x3, -speed_custom_l+trim_r);
     MotorRun(0x4, -speed_custom_l+trim_r);
-}
-  
-
-  //% blockId=robotbit_Beebot_krechts_adv block="Fahren Kurve rechts"
-    //% group="Linea/Manuva" weight=1
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    //% subcategory="Fahren Advanced" weight=90
-    export function BeeKurveRechts_a(): void {
-      MotorRun(0x3, speed_custom_l-trim_r);
-      MotorRun(0x4, speed_custom_l-trim_r);
+    } else {
+    MotorRun(0x1, -speed_custom_r+trim_l);
+    MotorRun(0x2, -speed_custom_r+trim_l);
+    MotorRun(0x3, speed_custom_l-trim_r);
+    MotorRun(0x4, speed_custom_l-trim_r);
+    }
 
   }
-  
-   //% blockId=robotbit_Manuva_linksvordiag_adv block="Diagonal Links Vor"
+
+   //% blockId=robotbit_Manuva_linksvordiag_adv block="Diagonal %links_rechts_index Vor"
     //% group="Manuva" weight=110
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% subcategory="Fahren Advanced" weight=110
-    export function Manuvalvd_a(): void {
-      MotorRun(0x1, speed_custom_r-trim_l);
+    export function Manuvalvd_a(links_rechts_index: links_rechts_bewegung): void {
+      if(links_rechts_index == 0) {
+        MotorRun(0x1, speed_custom_r-trim_l);
       MotorRun(0x3, speed_custom_l-trim_r);
-  }
-   //% blockId=robotbit_Manuva_rechtsvordiag_adv block="Diagonal Rechts Vors"
-  //% group="Manuva" weight=110
-  //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-  //% subcategory="Fahren Advanced" weight=110
-  export function Manuvarvd_a(): void {
-      MotorRun(0x2, speed_custom_r-trim_l);
+      } else {
+           MotorRun(0x2, speed_custom_r-trim_l);
       MotorRun(0x4, speed_custom_l-trim_r);
+      }
   }
-   //% blockId=robotbit_Manuva_linksrueckdiag_adv block="Diagonal Links Zurück"
+   
+   //% blockId=robotbit_Manuva_linksrueckdiag_adv block="Diagonal %links_rechts_index Zurück"
   //% group="Manuva" weight=110
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Advanced" weight=110
-  export function Manuvalrd_a(): void {
+  export function Manuvalrd_a(links_rechts_index: links_rechts_bewegung): void {
+     if(links_rechts_index == 0) {
       MotorRun(0x2, -speed_custom_r+trim_l);
       MotorRun(0x4, -speed_custom_l+trim_r);
-  }
-   //% blockId=robotbit_Manuva_rechtsrueckdiag_adv block="Diagonal Rechts Zurück"
-  //% group="Manuva" weight=110
-  //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-  //% subcategory="Fahren Advanced" weight=110
-  export function Manuvarrd_a(): void {
+        } else {
       MotorRun(0x1, -speed_custom_r+trim_l);
       MotorRun(0x3, -speed_custom_l+trim_r);
-
+        }
   }
-   //% blockId=robotbit_Manuva_rechtsschieben_adv block="Fahren rechts"
+   
+   //% blockId=robotbit_Manuva_rechtsschieben_adv block="Fahren %links_rechts_index"
   //% group="Manuva" weight=110
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Advanced" weight=110
-  export function Manuvarrs_a(): void {
-    MotorRun(0x1, -speed_custom_r+trim_l);
-    MotorRun(0x2, speed_custom_r-trim_l);
-    MotorRun(0x3, -speed_custom_l+trim_r);
-    MotorRun(0x4, speed_custom_l-trim_r);
-  }
-   //% blockId=robotbit_Manuva_linksschieben_adv block="Fahren links"
-  //% group="Manuva" weight=110
-  //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-  //% subcategory="Fahren Advanced" weight=110
-  export function Manuvarls_a(): void {
+  export function Manuvarrs_a(links_rechts_index: links_rechts_bewegung): void {
+    if(links_rechts_index == 0) {
     MotorRun(0x1, speed_custom_r-trim_l);
     MotorRun(0x2, -speed_custom_r+trim_l);
     MotorRun(0x3, speed_custom_l-trim_r);
     MotorRun(0x4, -speed_custom_l+trim_r);
-
-}
+      }
+     else {  
+    MotorRun(0x1, -speed_custom_r+trim_l);
+    MotorRun(0x2, speed_custom_r-trim_l);
+    MotorRun(0x3, -speed_custom_l+trim_r);
+    MotorRun(0x4, speed_custom_l-trim_r);
+     }
+  }
+  
     //% blockId=robotbit_stop_all_adv block="Alle Motoren stoppen"
   //% group="Motoren stoppen" weight=1
   //% blockGap=50
