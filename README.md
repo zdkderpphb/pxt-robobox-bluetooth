@@ -1,5 +1,5 @@
 
-## Download der 3D-Druck Dateien und Laservut-Dateien
+## Download der 3D-Druck Dateien und Lasercut-Dateien
 * öffne [https://www.robo-box.at](https://www.robo-box.at)
 
 > Diese Seite bei [https://zdkderpphb.github.io/pxt-robobox/](https://zdkderpphb.github.io/pxt-robobox/) öffnen
