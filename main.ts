@@ -405,25 +405,25 @@ namespace Robobox {
     speed_custom_r = Math.map(speed_c, 1, 100, 90, 255)
   }*/
      /**
-   * @param trim_l_block value of the speed between 1 and 10. eg: 10 */
-//% blockId=trim_l_block_adv block="Trimmen links %trim_l_block|%"
-  //% trim_l_block.min=0 trim_l_block.max=100
+   * @param trim_l_block_a value of the speed between 1 and 10. eg: 10 */
+//% blockId=trim_l_block_adv block="Trimmen links %trim_l_block_a|%"
+  //% trim_l_block_a.min=0 trim_l_block_a.max=100
   //% group="Setup" weight=1
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Advanced" weight=90
-  export function settriml_a(trim_l_block: number = 1): void {
-    trim_l = trim_l_block;
+  export function settriml_a(trim_l_block_a: number = 1): void {
+    trim_l_a = trim_l_block_a;
   }
 
     /**
-   * @param trim_r_block value of the speed between 1 and 10. eg: 10 */
-//% blockId=trim_r_block_adv block="Trimmen rechts %trim_r_block|%"
-  //% trim_r_block.min=0 trim_r_block.max=100
+   * @param trim_r_block_a value of the speed between 1 and 10. eg: 10 */
+//% blockId=trim_r_block_adv block="Trimmen rechts %trim_r_block_a|%"
+  //% trim_r_block_a.min=0 trim_r_block_a.max=100
   //% group="Setup" weight=1
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Advanced" weight=90
   export function settrimr_a(trim_r_block: number = 1): void {
-    trim_r = trim_r_block;
+    trim_r_a = trim_r_block_a;
   }
  
      //% blockId=robotbit_Beebot_vor_adv block="Fahren %vorzur_index"
@@ -433,16 +433,16 @@ namespace Robobox {
     //export function BeeVor(delay: number): void {
      export function BeeVor_adv(vorzur_index: vor_zurueck_bewegung): void {
       if(vorzur_index == 0) {
-      MotorRun(0x1, speed_custom_r-trim_l);
-      MotorRun(0x2, speed_custom_r-trim_l);
-      MotorRun(0x3, speed_custom_l-trim_r);
-      MotorRun(0x4, speed_custom_l-trim_r);
+      MotorRun(0x1, speed_custom_r-trim_l_a);
+      MotorRun(0x2, speed_custom_r-trim_l_a);
+      MotorRun(0x3, speed_custom_l-trim_r_a);
+      MotorRun(0x4, speed_custom_l-trim_r_a);
  }
          else {
-     MotorRun(0x1, -speed_custom_r+trim_l);
-      MotorRun(0x2, -speed_custom_r+trim_l);
-      MotorRun(0x3, -speed_custom_l+trim_r);
-      MotorRun(0x4, -speed_custom_l+trim_r);
+     MotorRun(0x1, -speed_custom_r+trim_l_a);
+      MotorRun(0x2, -speed_custom_r+trim_l_a);
+      MotorRun(0x3, -speed_custom_l+trim_r_a);
+      MotorRun(0x4, -speed_custom_l+trim_r_a);
        
          }
          
@@ -453,11 +453,11 @@ namespace Robobox {
     //% subcategory="Fahren Advanced" weight=90
     export function BeeKurveLinks_a(links_rechts_index: links_rechts_bewegung): void {
       if(links_rechts_index == 0) {
-      MotorRun(0x1, speed_custom_r-trim_l);
-      MotorRun(0x2, speed_custom_r-trim_l);
+      MotorRun(0x1, speed_custom_r-trim_l_a);
+      MotorRun(0x2, speed_custom_r-trim_l_a);
       } else {
-      MotorRun(0x3, speed_custom_l-trim_r);
-      MotorRun(0x4, speed_custom_l-trim_r);
+      MotorRun(0x3, speed_custom_l-trim_r_a);
+      MotorRun(0x4, speed_custom_l-trim_r_a);
       }
 
   }
@@ -468,15 +468,15 @@ namespace Robobox {
   //% subcategory="Fahren Advanced" weight=90
   export function BeeRechts_a(links_rechts_index: links_rechts_bewegung): void {
    if(links_rechts_index == 0) {
-    MotorRun(0x1, speed_custom_r-trim_l);
-    MotorRun(0x2, speed_custom_r-trim_l);
-    MotorRun(0x3, -speed_custom_l+trim_r);
-    MotorRun(0x4, -speed_custom_l+trim_r);
+    MotorRun(0x1, speed_custom_r-trim_l_a);
+    MotorRun(0x2, speed_custom_r-trim_l_a);
+    MotorRun(0x3, -speed_custom_l+trim_r_a);
+    MotorRun(0x4, -speed_custom_l+trim_r_a);
     } else {
-    MotorRun(0x1, -speed_custom_r+trim_l);
-    MotorRun(0x2, -speed_custom_r+trim_l);
-    MotorRun(0x3, speed_custom_l-trim_r);
-    MotorRun(0x4, speed_custom_l-trim_r);
+    MotorRun(0x1, -speed_custom_r+trim_l_a);
+    MotorRun(0x2, -speed_custom_r+trim_l_a);
+    MotorRun(0x3, speed_custom_l-trim_r_a);
+    MotorRun(0x4, speed_custom_l-trim_r_a);
     }
 
   }
@@ -487,11 +487,11 @@ namespace Robobox {
     //% subcategory="Fahren Advanced" weight=110
     export function Manuvalvd_a(links_rechts_index: links_rechts_bewegung): void {
       if(links_rechts_index == 0) {
-        MotorRun(0x1, speed_custom_r-trim_l);
-      MotorRun(0x3, speed_custom_l-trim_r);
+        MotorRun(0x1, speed_custom_r-trim_l_a);
+      MotorRun(0x3, speed_custom_l-trim_r_a);
       } else {
-           MotorRun(0x2, speed_custom_r-trim_l);
-      MotorRun(0x4, speed_custom_l-trim_r);
+           MotorRun(0x2, speed_custom_r-trim_l_a);
+      MotorRun(0x4, speed_custom_l-trim_r_a);
       }
   }
    
@@ -501,11 +501,11 @@ namespace Robobox {
   //% subcategory="Fahren Advanced" weight=110
   export function Manuvalrd_a(links_rechts_index: links_rechts_bewegung): void {
      if(links_rechts_index == 0) {
-      MotorRun(0x2, -speed_custom_r+trim_l);
-      MotorRun(0x4, -speed_custom_l+trim_r);
+      MotorRun(0x2, -speed_custom_r+trim_l_a);
+      MotorRun(0x4, -speed_custom_l+trim_r_a);
         } else {
-      MotorRun(0x1, -speed_custom_r+trim_l);
-      MotorRun(0x3, -speed_custom_l+trim_r);
+      MotorRun(0x1, -speed_custom_r+trim_l_a);
+      MotorRun(0x3, -speed_custom_l+trim_r_a);
         }
   }
    
@@ -515,16 +515,16 @@ namespace Robobox {
   //% subcategory="Fahren Advanced" weight=110
   export function Manuvarrs_a(links_rechts_index: links_rechts_bewegung): void {
     if(links_rechts_index == 0) {
-    MotorRun(0x1, speed_custom_r-trim_l);
-    MotorRun(0x2, -speed_custom_r+trim_l);
-    MotorRun(0x3, speed_custom_l-trim_r);
-    MotorRun(0x4, -speed_custom_l+trim_r);
+    MotorRun(0x1, speed_custom_r-trim_l_a);
+    MotorRun(0x2, -speed_custom_r+trim_l_a);
+    MotorRun(0x3, speed_custom_l-trim_r_a);
+    MotorRun(0x4, -speed_custom_l+trim_r_a);
       }
      else {  
-    MotorRun(0x1, -speed_custom_r+trim_l);
-    MotorRun(0x2, speed_custom_r-trim_l);
-    MotorRun(0x3, -speed_custom_l+trim_r);
-    MotorRun(0x4, speed_custom_l-trim_r);
+    MotorRun(0x1, -speed_custom_r+trim_l_a);
+    MotorRun(0x2, speed_custom_r-trim_l_a);
+    MotorRun(0x3, -speed_custom_l+trim_r_a);
+    MotorRun(0x4, speed_custom_l-trim_r_a);
      }
   }
   
