@@ -120,6 +120,8 @@ namespace Robobox {
      let speed_custom_r = 255;
   let trim_l = 0;
     let trim_r = 0;
+    let trim_l_a = 0;
+    let trim_r_a = 0;
 
     function i2cwrite(addr: number, reg: number, value: number) {
         let buf = pins.createBuffer(2)
