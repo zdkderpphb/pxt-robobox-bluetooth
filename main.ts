@@ -424,7 +424,7 @@ namespace Robobox {
   //% group="Setup" weight=1
   //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
   //% subcategory="Fahren Advanced" weight=90
-  export function settrimr_a(trim_r_block: number = 1): void {
+  export function settrimr_a(trim_r_block_a: number = 1): void {
     trim_r_a = trim_r_block_a;
   }
  
