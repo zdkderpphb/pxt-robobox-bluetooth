@@ -692,6 +692,36 @@ namespace Robobox {
       setPwm(index + 7, 0, value)
   }
 
+    /**
+     * Servo Execute
+     * @param index Servo Channel; eg: S1
+     * @param degree [0-180] degree of servo; eg: 0, 90, 180
+    */
+    //% blockId=robotbit_servo block="Start"
+    //% group="Servo" weight=90
+    //% degree.min=0 degree.max=180
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+     //% subcategory="RoboterArm" weight=90
+     export function nullPosition(index: Servos, degree: number): void {
+      if (!initialized) {
+          initPCA9685()
+      }
+      // 50hz: 20,000 us
+      let v_us1 = (90 * 1800 / 180 + 600) // 0.6 ~ 2.4
+      let value1 = v_us * 4096 / 20000
+      setPwm(1 + 7, 0, value1)
+      let v_us2 = (20 * 1800 / 180 + 600) // 0.6 ~ 2.4
+      let value2 = v_us * 4096 / 20000
+      setPwm(2 + 7, 0, value2)
+      let v_us3 = (50 * 1800 / 180 + 600) // 0.6 ~ 2.4
+      let value3 = v_us * 4096 / 20000
+      setPwm(3 + 7, 0, value3)
+      let v_us4 = (100 * 1800 / 180 + 600) // 0.6 ~ 2.4
+      let value4 = v_us * 4096 / 20000
+      setPwm(4 + 7, 0, value4)
+  }
+
+
 
   //% blockId=robotbit_stepper_degree block="Schrittmotor 28BYJ-48|%index|Grad %degree"
   //% group="Schrittmotor" weight=90
