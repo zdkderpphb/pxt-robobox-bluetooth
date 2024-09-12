@@ -696,7 +696,7 @@ namespace Robobox {
      /**
      * Init GruArm
      */
-    //% blockId=robotbit_servo block="Start"
+    //% blockId=robotbit_servo_null block="Start"
     //% group="Servo" weight=90
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
      //% subcategory="RoboterArm" weight=90
