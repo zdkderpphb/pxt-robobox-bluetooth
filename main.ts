@@ -692,17 +692,15 @@ namespace Robobox {
       setPwm(index + 7, 0, value)
   }
 
-    /**
-     * Servo Execute
-     * @param index Servo Channel; eg: S1
-     * @param degree [0-180] degree of servo; eg: 0, 90, 180
-    */
+
+     /**
+     * Init GruArm
+     */
     //% blockId=robotbit_servo block="Start"
     //% group="Servo" weight=90
-    //% degree.min=0 degree.max=180
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
      //% subcategory="RoboterArm" weight=90
-     export function nullPosition(index: Servos, degree: number): void {
+     export function nullPosition(): void {
       if (!initialized) {
           initPCA9685()
       }
