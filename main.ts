@@ -679,7 +679,7 @@ namespace Robobox {
     */
     //% blockId=robotbit_servo block="Servo|%index|Grad %degree"
     //% group="Servo" weight=90
-    //% degree.min=0 degree.max=180
+    //% degree.min=0 degree.max=360
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
      //% subcategory="RoboterArm" weight=90
      export function Servo(index: Servos, degree: number): void {
@@ -731,16 +731,16 @@ namespace Robobox {
           initPCA9685()
       }
       // 50hz: 20,000 us
-      let v_us1 = (0 * 1800 / 180 + 600) // 0.6 ~ 2.4
+      let v_us1 = (90 * 1800 / 180 + 600) // 0.6 ~ 2.4
       let value1 = v_us1 * 4096 / 20000
       setPwm(1 + 7, 0, value1)
-      let v_us2 = (0 * 1800 / 180 + 600) // 0.6 ~ 2.4
+      let v_us2 = (180 * 1800 / 180 + 600) // 0.6 ~ 2.4
       let value2 = v_us2 * 4096 / 20000
       setPwm(2 + 7, 0, value2)
       let v_us3 = (0 * 1800 / 180 + 600) // 0.6 ~ 2.4
       let value3 = v_us3 * 4096 / 20000
       setPwm(3 + 7, 0, value3)
-      let v_us4 = (0 * 1800 / 180 + 600) // 0.6 ~ 2.4
+      let v_us4 = (45 * 1800 / 180 + 600) // 0.6 ~ 2.4
       let value4 = v_us4 * 4096 / 20000
       setPwm(4 + 7, 0, value4)
   }
