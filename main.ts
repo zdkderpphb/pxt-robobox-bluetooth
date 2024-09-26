@@ -714,7 +714,7 @@ namespace Robobox {
       let v_us3 = (50 * 1950 / 180 + 600) // 0.6 ~ 2.4
       let value3 = v_us3 * 4096 / 20000
       setPwm(3 + 7, 0, value3)
-      let v_us4 = (100 * 1950 / 180 + 600) // 0.6 ~ 2.4
+      let v_us4 = (0 * 1950 / 180 + 600) // 0.6 ~ 2.4
       let value4 = v_us4 * 4096 / 20000
       setPwm(4 + 7, 0, value4)
   }
