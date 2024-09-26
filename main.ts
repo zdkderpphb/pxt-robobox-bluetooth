@@ -747,17 +747,41 @@ namespace Robobox {
 
 
 
-  //% blockId=robotbit_stepper_degree block="Schrittmotor 28BYJ-48|%index|Grad %degree"
-  //% group="Schrittmotor" weight=90
-  //% subcategory="RoboterArm" weight=90
-  export function StepperDegree(index: Steppers, degree: number): void {
+    /**
+     * Servo Execute
+     * @param index Servo Channel; eg: S1
+     * @param degreeStart [0-180] degree of servo; eg: 0, 90, 180
+     * @param degreeStop [0-180] degree of servo; eg: 0, 90, 180
+    */
+    //% blockId=robotbit_servo block="Servo|%index|von %degreeStart|bis %degreeStop"
+    //% group="Bewegung" weight=90
+    //% degreeStart.min=0 degree.max=180
+    //% degreeStop.min=0 degree.max=180
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+     //% subcategory="RoboterArm" weight=90
+  export function StepperDegree(index: Steppers, degreeStart: number, degreeStop: number): void {
       if (!initialized) {
           initPCA9685()
       }
-      setStepper(index, degree > 0);
-      degree = Math.abs(degree);
-      basic.pause(10240 * degree / 360);
-      MotorStopAll()
+      let v_us = (degreeStart * 1800 / 180 + 600) // 0.6 ~ 2.4
+      let value = v_us * 4096 / 20000
+      setPwm(index + 7, 0, value)
+      if((degreeStart-degreeStop)<0) {
+      for (let armStart = degreeStart; armstart <= degreeStop; armStart++) {
+            let v_us_bew_gr = (armStart * 1800 / 180 + 600) // 0.6 ~ 2.4
+            let value_bew_gr = v_us_bew_gr * 4096 / 20000
+            setPwm(index + 7, 0, value_bew_gr);
+            basic.pause(10);          
+        }
+      } else {
+      for (let armStart = degreeStart; armstart >= degreeStop; armStart--) {
+            let v_us_bew_kl = (armStart * 1800 / 180 + 600) // 0.6 ~ 2.4
+            let value_bew_kl = v_us_bew_kl * 4096 / 20000
+            setPwm(index + 7, 0, value_bew_kl);
+            basic.pause(10);          
+        }
+      }
+      
   }
 
 
