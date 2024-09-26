@@ -753,7 +753,7 @@ namespace Robobox {
      * @param degreeStart [0-180] degree of servo; eg: 0, 90, 180
      * @param degreeStop [0-180] degree of servo; eg: 0, 90, 180
     */
-    //% blockId=robotbit_servo block="Servo|%index|von %degreeStart|bis %degreeStop"
+    //% blockId=robotbit_servo_vonbis block="Servo|%index|von %degreeStart|bis %degreeStop"
     //% group="Bewegung" weight=90
     //% degreeStart.min=0 degree.max=180
     //% degreeStop.min=0 degree.max=180
