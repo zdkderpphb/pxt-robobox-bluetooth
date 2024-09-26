@@ -759,7 +759,7 @@ namespace Robobox {
     //% degreeStop.min=0 degree.max=180
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
      //% subcategory="RoboterArm" weight=90
-  export function StepperDegree(index: Steppers, degreeStart: number, degreeStop: number): void {
+  export function StepperDegree(index: Servos, degreeStart: number, degreeStop: number): void {
       if (!initialized) {
           initPCA9685()
       }
