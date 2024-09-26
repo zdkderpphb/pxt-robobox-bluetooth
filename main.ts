@@ -767,14 +767,14 @@ namespace Robobox {
       let value = v_us * 4096 / 20000
       setPwm(index + 7, 0, value)
       if((degreeStart-degreeStop)<0) {
-      for (let armStart = degreeStart; armstart <= degreeStop; armStart++) {
+      for (let armStart = degreeStart; armStart <= degreeStop; armStart++) {
             let v_us_bew_gr = (armStart * 1800 / 180 + 600) // 0.6 ~ 2.4
             let value_bew_gr = v_us_bew_gr * 4096 / 20000
             setPwm(index + 7, 0, value_bew_gr);
             basic.pause(10);          
         }
       } else {
-      for (let armStart = degreeStart; armstart >= degreeStop; armStart--) {
+      for (let armStart = degreeStart; armStart >= degreeStop; armStart--) {
             let v_us_bew_kl = (armStart * 1800 / 180 + 600) // 0.6 ~ 2.4
             let value_bew_kl = v_us_bew_kl * 4096 / 20000
             setPwm(index + 7, 0, value_bew_kl);
