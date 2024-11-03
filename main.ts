@@ -679,7 +679,7 @@ namespace Robobox {
     */
     //% blockId=robotbit_servo block="Servo|%index|Grad %degree"
     //% group="Servo" weight=90
-    //% degree.min=0 degree.max=360
+    //% degree.min=0 degree.max=180
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
      //% subcategory="RoboterArm" weight=90
      export function Servo(index: Servos, degree: number): void {
