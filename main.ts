@@ -123,6 +123,15 @@ namespace Robobox {
     let trim_l_a = 0;
     let trim_r_a = 0;
 
+    let s1u = 0;
+    let s1o = 180;
+    let s2u = 100;
+    let s2o = 130;
+    let s3u = 90;
+    let s3o = 130;
+    let s4u = 30;
+    let s4o = 50;
+
     function i2cwrite(addr: number, reg: number, value: number) {
         let buf = pins.createBuffer(2)
         buf[0] = reg
@@ -687,6 +696,7 @@ namespace Robobox {
           initPCA9685()
       }
       // 50hz: 20,000 us
+      
       if (degree >= 0 && degree <= 180) {
       let v_us = (degree * 1950 / 180 + 600) // 0.6 ~ 2.4
       let value = v_us * 4096 / 20000
@@ -788,6 +798,43 @@ namespace Robobox {
       }
       
   }
+
+    /**
+     * Execute all 4 Servos simultaneously
+     * @param degreeStart1 [0-180] degree of servo 1; eg: S1, 90, 180
+     * @param degreeStop1 [0-180] degree of servo 1; eg: S1, 90, 180
+     * @param degreeStart2 [0-180] degree of servo 2; eg: S2, 90, 180
+     * @param degreeStop2 [0-180] degree of servo 2; eg: S2, 90, 180
+     * @param degreeStart3 [0-180] degree of servo 3; eg: S3, 90, 180
+     * @param degreeStop3 [0-180] degree of servo 3; eg: S3, 90, 180
+     * @param degreeStart4 [0-180] degree of servo 4; eg: S4, 90, 180
+     * @param degreeStop4 [0-180] degree of servo 4; eg: S4, 90, 180
+    */
+    //% blockId=robotbit_all_servos_vonbis block="Servo 1: von %degreeStart1 bis %degreeStop1\nServo 2: von %degreeStart2 bis %degreeStop2\nServo 3: von %degreeStart3 bis %degreeStop3\nServo 4: von %degreeStart4 bis %degreeStop4"
+    //% degreeStart1.min=0 degreeStart1.max=180
+    //% degreeStop1.min=0 degreeStop1.max=180
+    //% degreeStart2.min=0 degreeStart2.max=180
+    //% degreeStop2.min=0 degreeStop2.max=180
+    //% degreeStart3.min=0 degreeStart3.max=180
+    //% degreeStop3.min=0 degreeStop3.max=180
+    //% degreeStart4.min=0 degreeStart4.max=180
+    //% degreeStop4.min=0 degreeStop4.max=180
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+     //% subcategory="RoboterArm" weight=20
+    export function allServosVonBis(degreeStart1: number, degreeStop1: number, degreeStart2: number, degreeStop2: number, degreeStart3: number, degreeStop3: number, degreeStart4: number, degreeStop4: number): void {
+        s1u = degreeStart1;
+        s1o = degreeStop1;
+
+        s2u = degreeStart2;
+        s2o = degreeStop2;
+
+        s3u = degreeStart3;
+        s3o = degreeStop3;
+
+        s4u = degreeStart4;
+        s4o = degreeStop4;
+
+    }
 
   /*#############################################################################Roboterarm Ende###############################################*/
   
