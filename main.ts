@@ -688,7 +688,7 @@ namespace Robobox {
           initPCA9685()
       }
       // 50hz: 20,000 us
-      if (degree >= 0 && degree <= 1) {
+      if (degree >= 0 && degree <= 180) {
       let v_us = (degree * 1950 / 180 + 600) // 0.6 ~ 2.4
       let value = v_us * 4096 / 20000
       setPwm(index + 7, 0, value)
@@ -711,13 +711,13 @@ namespace Robobox {
       let v_us1 = (90 * 1950 / 180 + 600) // 0.6 ~ 2.4
       let value1 = v_us1 * 4096 / 20000
       setPwm(1 + 7, 0, value1)
-      let v_us2 = (20 * 1950 / 180 + 600) // 0.6 ~ 2.4
+      let v_us2 = (100 * 1950 / 180 + 600) // 0.6 ~ 2.4
       let value2 = v_us2 * 4096 / 20000
       setPwm(2 + 7, 0, value2)
-      let v_us3 = (50 * 1950 / 180 + 600) // 0.6 ~ 2.4
+      let v_us3 = (100 * 1950 / 180 + 600) // 0.6 ~ 2.4
       let value3 = v_us3 * 4096 / 20000
       setPwm(3 + 7, 0, value3)
-      let v_us4 = (0 * 1950 / 180 + 600) // 0.6 ~ 2.4
+      let v_us4 = (30 * 1950 / 180 + 600) // 0.6 ~ 2.4
       let value4 = v_us4 * 4096 / 20000
       setPwm(4 + 7, 0, value4)
   }
