@@ -132,11 +132,18 @@ namespace Robobox {
     let s4u = 0;
     let s4o = 180;
 
-    const servoLimits = {
-    0x01: { min: s1u, max: s1o },
-    0x02: { min: s2u, max: s2o },
-    0x03: { min: s3u, max: s3o },
-    0x04: { min: s4u, max: s4o }
+    // Definition der Typen für die Grenzwerte
+    interface ServoLimit {
+        min: number;
+        max: number;
+    }
+
+    // Typisierung des servoLimits-Objekts
+    const servoLimits: { [key: number]: ServoLimit } = {
+        0x01: { min: s1u, max: s1o },
+        0x02: { min: s2u, max: s2o },
+        0x03: { min: s3u, max: s3o },
+        0x04: { min: s4u, max: s4o }
     };
 
     function i2cwrite(addr: number, reg: number, value: number) {
