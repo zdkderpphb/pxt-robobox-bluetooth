@@ -778,7 +778,7 @@ namespace Robobox {
       let v_us = (degreeStart * 1950 / 180 + 600) // 0.6 ~ 2.4
       let value = v_us * 4096 / 20000
       setPwm(index + 7, 0, value)
-      if((degreeStart-degreeStop)<0 and degreeStop <=180) {
+      if((degreeStart-degreeStop)<0 && degreeStop <=180) {
       
       for (let armStart = degreeStart; armStart <= degreeStop; armStart++) {
             let v_us_bew_gr = (armStart * 1950 / 180 + 600) // 0.6 ~ 2.4
@@ -788,12 +788,12 @@ namespace Robobox {
         }
       } else {
           if( degreeStart <=180) {
-      for (let armStart = degreeStart; armStart >= degreeStop; armStart--) {
-            let v_us_bew_kl = (armStart * 1950 / 180 + 600) // 0.6 ~ 2.4
-            let value_bew_kl = v_us_bew_kl * 4096 / 20000
-            setPwm(index + 7, 0, value_bew_kl);
-            basic.pause(10);          
-        }
+            for (let armStart = degreeStart; armStart >= degreeStop; armStart--) {
+                let v_us_bew_kl = (armStart * 1950 / 180 + 600) // 0.6 ~ 2.4
+                let value_bew_kl = v_us_bew_kl * 4096 / 20000
+                setPwm(index + 7, 0, value_bew_kl);
+                basic.pause(10);          
+                }
           }
       }
       
