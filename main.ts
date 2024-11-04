@@ -787,7 +787,7 @@ namespace Robobox {
     //% degreeStop.min=0 degree.max=180
     //% degreeStop.min=0 degree.max=180
     //% Pause.min = 1 Pause.max = 1000
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=6
      //% subcategory="RoboterArm" weight=90
   export function StepperDegree(index: Servos, degreeStart: number, degreeStop: number, Pause: number): void {
       if (!initialized) {
@@ -843,7 +843,7 @@ namespace Robobox {
     //% degreeStop3.min=0 degreeStop3.max=180
     //% degreeStart4.min=0 degreeStart4.max=180
     //% degreeStop4.min=0 degreeStop4.max=180
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=6
      //% subcategory="RoboterArm" weight=20
     export function allServosVonBis(degreeStart1: number, degreeStop1: number, degreeStart2: number, degreeStop2: number, degreeStart3: number, degreeStop3: number, degreeStart4: number, degreeStop4: number): void {
         s1u = degreeStart1;
