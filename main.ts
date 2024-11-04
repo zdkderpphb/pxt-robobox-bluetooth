@@ -123,28 +123,6 @@ namespace Robobox {
     let trim_l_a = 0;
     let trim_r_a = 0;
 
-    let s1u = 0;
-    let s1o = 180;
-    let s2u = 0;
-    let s2o = 180;
-    let s3u = 0;
-    let s3o = 180;
-    let s4u = 0;
-    let s4o = 180;
-
-    // Definition der Typen für die Grenzwerte
-    interface ServoLimit {
-        min: number;
-        max: number;
-    }
-
-    // Typisierung des servoLimits-Objekts
-    const servoLimits: { [key: number]: ServoLimit } = {
-        0x01: { min: s1u, max: s1o },
-        0x02: { min: s2u, max: s2o },
-        0x03: { min: s3u, max: s3o },
-        0x04: { min: s4u, max: s4o }
-    };
 
     function i2cwrite(addr: number, reg: number, value: number) {
         let buf = pins.createBuffer(2)
@@ -794,15 +772,14 @@ namespace Robobox {
           initPCA9685()
       }
 
-      const limits = servoLimits[index];
-      if(degreeStart>=limits.min && degreeStart<=limits.max) {
+      if(degreeStart>=0 && degreeStart<=180) {
       let v_us = (degreeStart * 1950 / 180 + 600) // 0.6 ~ 2.4
       let value = v_us * 4096 / 20000
       setPwm(index + 7, 0, value)
       }
       
       
-      if((degreeStart-degreeStop)<0 && degreeStop <=limits.max) {
+      if((degreeStart-degreeStop)<0 && degreeStop <=180) {
       
       for (let armStart = degreeStart; armStart <= degreeStop; armStart++) {
             let v_us_bew_gr = (armStart * 1950 / 180 + 600) // 0.6 ~ 2.4
@@ -811,7 +788,7 @@ namespace Robobox {
             basic.pause(Dauer);          
         }
       } else {
-          if( degreeStart <=limits.max) {
+          if( degreeStart <=180) {
             for (let armStart = degreeStart; armStart >= degreeStop; armStart--) {
                 let v_us_bew_kl = (armStart * 1950 / 180 + 600) // 0.6 ~ 2.4
                 let value_bew_kl = v_us_bew_kl * 4096 / 20000
@@ -822,51 +799,6 @@ namespace Robobox {
       }
       
   }
-
-    /**
-     * Execute all 4 Servos simultaneously
-     * @param degreeStart1 [0-180] degree of servo 1; eg: S1, 90, 180
-     * @default 0
-     * @param degreeStop1 [0-180] degree of servo 1; eg: S1, 90, 180
-     * @default 180
-     * @param degreeStart2 [0-180] degree of servo 2; eg: S2, 90, 180
-     * @default 90
-     * @param degreeStop2 [0-180] degree of servo 2; eg: S2, 90, 180
-     * @default 130
-     * @param degreeStart3 [0-180] degree of servo 3; eg: S3, 90, 180
-     * @default 100
-     * @param degreeStop3 [0-180] degree of servo 3; eg: S3, 90, 180
-     * @default 130
-     * @param degreeStart4 [0-180] degree of servo 4; eg: S4, 90, 180
-     * @default 30
-     * @param degreeStop4 [0-180] degree of servo 4; eg: S4, 90, 180
-     * @default 50
-    */
-    //% blockId=robotbit_all_servos_vonbis block="Servo 1: von %degreeStart1 bis %degreeStop1\nServo 2: von %degreeStart2 bis %degreeStop2\nServo 3: von %degreeStart3 bis %degreeStop3\nServo 4: von %degreeStart4 bis %degreeStop4"
-    //% degreeStart1.min=0 degreeStart1.max=180
-    //% degreeStop1.min=0 degreeStop1.max=180
-    //% degreeStart2.min=0 degreeStart2.max=180
-    //% degreeStop2.min=0 degreeStop2.max=180
-    //% degreeStart3.min=0 degreeStart3.max=180
-    //% degreeStop3.min=0 degreeStop3.max=180
-    //% degreeStart4.min=0 degreeStart4.max=180
-    //% degreeStop4.min=0 degreeStop4.max=180
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=6
-     //% subcategory="RoboterArm" weight=20
-    export function allServosVonBis(degreeStart1: number, degreeStop1: number, degreeStart2: number, degreeStop2: number, degreeStart3: number, degreeStop3: number, degreeStart4: number, degreeStop4: number): void {
-        s1u = degreeStart1;
-        s1o = degreeStop1;
-
-        s2u = degreeStart2;
-        s2o = degreeStop2;
-
-        s3u = degreeStart3;
-        s3o = degreeStop3;
-
-        s4u = degreeStart4;
-        s4o = degreeStop4;
-
-    }
 
   /*#############################################################################Roboterarm Ende###############################################*/
   
