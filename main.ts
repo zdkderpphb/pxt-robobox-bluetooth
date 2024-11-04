@@ -778,10 +778,10 @@ namespace Robobox {
      * @param index Servo Channel; eg: S1
      * @param degreeStart [0-180] degree of servo; eg: 0, 90, 180
      * @param degreeStop [0-180] degree of servo; eg: 0, 90, 180
-     * @param Pause [1-1000] degree of servo; eg: 10
+     * @param Dauer [1-1000] speed; eg: 10
      * @default 10
     */
-    //% blockId=robotbit_servo_vonbis block="Servo|%index|von %degreeStart|bis %degreeStop|Pause %Pause""
+    //% blockId=robotbit_servo_vonbis block="Servo|%index|von %degreeStart|bis %degreeStop|Dauer %Dauer""
     //% group="Bewegung" weight=90
     //% degreeStart.min=0 degree.max=180
     //% degreeStop.min=0 degree.max=180
@@ -789,7 +789,7 @@ namespace Robobox {
     //% Pause.min = 1 Pause.max = 1000
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=6
      //% subcategory="RoboterArm" weight=90
-  export function StepperDegree(index: Servos, degreeStart: number, degreeStop: number, Pause: number): void {
+  export function StepperDegree(index: Servos, degreeStart: number, degreeStop: number, Dauer: number): void {
       if (!initialized) {
           initPCA9685()
       }
@@ -808,7 +808,7 @@ namespace Robobox {
             let v_us_bew_gr = (armStart * 1950 / 180 + 600) // 0.6 ~ 2.4
             let value_bew_gr = v_us_bew_gr * 4096 / 20000
             setPwm(index + 7, 0, value_bew_gr);
-            basic.pause(Pause);          
+            basic.pause(Dauer);          
         }
       } else {
           if( degreeStart <=limits.max) {
@@ -816,7 +816,7 @@ namespace Robobox {
                 let v_us_bew_kl = (armStart * 1950 / 180 + 600) // 0.6 ~ 2.4
                 let value_bew_kl = v_us_bew_kl * 4096 / 20000
                 setPwm(index + 7, 0, value_bew_kl);
-                basic.pause(Pause);          
+                basic.pause(Dauer);          
                 }
           }
       }
