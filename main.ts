@@ -125,12 +125,19 @@ namespace Robobox {
 
     let s1u = 0;
     let s1o = 180;
-    let s2u = 100;
-    let s2o = 130;
-    let s3u = 90;
-    let s3o = 130;
-    let s4u = 30;
-    let s4o = 50;
+    let s2u = 0;
+    let s2o = 180;
+    let s3u = 0;
+    let s3o = 180;
+    let s4u = 0;
+    let s4o = 180;
+
+    const servoLimits = {
+    0x01: { min: s1u, max: s1o },
+    0x02: { min: s2u, max: s2o },
+    0x03: { min: s3u, max: s3o },
+    0x04: { min: s4u, max: s4o }
+    };
 
     function i2cwrite(addr: number, reg: number, value: number) {
         let buf = pins.createBuffer(2)
@@ -696,8 +703,8 @@ namespace Robobox {
           initPCA9685()
       }
       // 50hz: 20,000 us
-      
-      if (degree >= 0 && degree <= 180) {
+      const limits = servoLimits[index];
+      if (degree >= limits.min && degree <= limits.max) {
       let v_us = (degree * 1950 / 180 + 600) // 0.6 ~ 2.4
       let value = v_us * 4096 / 20000
       setPwm(index + 7, 0, value)
@@ -775,10 +782,16 @@ namespace Robobox {
       if (!initialized) {
           initPCA9685()
       }
+
+      const limits = servoLimits[index];
+      if(degreeStart>=limits.min && degreeStart<=limits.max) {
       let v_us = (degreeStart * 1950 / 180 + 600) // 0.6 ~ 2.4
       let value = v_us * 4096 / 20000
       setPwm(index + 7, 0, value)
-      if((degreeStart-degreeStop)<0 && degreeStop <=180) {
+      }
+      
+      
+      if((degreeStart-degreeStop)<0 && degreeStop <=limits.max) {
       
       for (let armStart = degreeStart; armStart <= degreeStop; armStart++) {
             let v_us_bew_gr = (armStart * 1950 / 180 + 600) // 0.6 ~ 2.4
@@ -787,7 +800,7 @@ namespace Robobox {
             basic.pause(10);          
         }
       } else {
-          if( degreeStart <=180) {
+          if( degreeStart <=limits.max) {
             for (let armStart = degreeStart; armStart >= degreeStop; armStart--) {
                 let v_us_bew_kl = (armStart * 1950 / 180 + 600) // 0.6 ~ 2.4
                 let value_bew_kl = v_us_bew_kl * 4096 / 20000
