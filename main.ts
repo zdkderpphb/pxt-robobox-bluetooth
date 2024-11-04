@@ -781,7 +781,7 @@ namespace Robobox {
      * @param Dauer [1-1000] speed; eg: 10
      * @default 10
     */
-    //% blockId=robotbit_servo_vonbis block="Servo|%index|von %degreeStart|bis %degreeStop|Dauer %Dauer""
+    //% blockId=robotbit_servo_vonbis block="Servo|%index|von %degreeStart|bis %degreeStop|Dauer %Dauer"
     //% group="Bewegung" weight=90
     //% degreeStart.min=0 degree.max=180
     //% degreeStop.min=0 degree.max=180
