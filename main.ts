@@ -781,7 +781,7 @@ namespace Robobox {
      * @param Pause [1-1000] degree of servo; eg: 10
      * @default 10
     */
-    //% blockId=robotbit_servo_vonbis block="Servo|%index|von %degreeStart|bis %degreeStop|Pause %degreeStop""
+    //% blockId=robotbit_servo_vonbis block="Servo|%index|von %degreeStart|bis %degreeStop|Pause %Pause""
     //% group="Bewegung" weight=90
     //% degreeStart.min=0 degree.max=180
     //% degreeStop.min=0 degree.max=180
