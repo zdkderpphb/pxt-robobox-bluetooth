@@ -826,13 +826,21 @@ namespace Robobox {
     /**
      * Execute all 4 Servos simultaneously
      * @param degreeStart1 [0-180] degree of servo 1; eg: S1, 90, 180
+     * @default 0
      * @param degreeStop1 [0-180] degree of servo 1; eg: S1, 90, 180
+     * @default 180
      * @param degreeStart2 [0-180] degree of servo 2; eg: S2, 90, 180
+     * @default 90
      * @param degreeStop2 [0-180] degree of servo 2; eg: S2, 90, 180
+     * @default 130
      * @param degreeStart3 [0-180] degree of servo 3; eg: S3, 90, 180
+     * @default 100
      * @param degreeStop3 [0-180] degree of servo 3; eg: S3, 90, 180
+     * @default 130
      * @param degreeStart4 [0-180] degree of servo 4; eg: S4, 90, 180
+     * @default 30
      * @param degreeStop4 [0-180] degree of servo 4; eg: S4, 90, 180
+     * @default 50
     */
     //% blockId=robotbit_all_servos_vonbis block="Servo 1: von %degreeStart1 bis %degreeStop1\nServo 2: von %degreeStart2 bis %degreeStop2\nServo 3: von %degreeStart3 bis %degreeStop3\nServo 4: von %degreeStart4 bis %degreeStop4"
     //% degreeStart1.min=0 degreeStart1.max=180
