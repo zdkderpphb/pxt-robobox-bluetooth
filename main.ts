@@ -802,12 +802,14 @@ namespace Robobox {
   /*#############################################################################Roboterarm Ende###############################################*/
 
     /**###################Erweiterungen START
- * Bewegt den ausgewählten Servo für eine angegebene Zeit (in ms) auf 40°.
- * @param servo der auszuwählende Servo, z.B. S1, S2, ...; eg: Servos.S1
- * @param ms Dauer in Millisekunden, z.B. 1000
- */
-//% blockId=erweiterungen_moveServo block="Bewege Servo %servo für %ms ms auf 40°"
-//% group="Erweiterungen" weight=50
+     * Bewegt den ausgewählten Servo für eine angegebene Zeit (in ms) auf 40°.
+     * @param servo der auszuwählende Servo, z.B. S1, S2, ...; eg: Servos.S1
+     * @param ms Dauer in Millisekunden, z.B. 1000
+     */
+    //% blockId=erweiterungen_moveServo block="Bewege Servo %servo für %ms ms auf 40°"
+    //% group="Stapler" weight=50
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=6
+    //% subcategory="Erweiterungen" weight=90
 export function moveServo(index: Servos, ms: number): void {
     // Setze den Servo auf 40 Grad
     let winkelmove = 40;
