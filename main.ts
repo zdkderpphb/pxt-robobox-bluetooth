@@ -810,16 +810,16 @@ namespace Robobox {
 //% group="Erweiterungen" weight=50
 export function moveServo(index: Servos, ms: number): void {
     // Setze den Servo auf 40 Grad
-    let winkel = 40;
-    let v_us = (winkel * 1950 / 180 + 600) // 0.6 ~ 2.4
-    let value = v_us * 4096 / 20000
-    setPwm(index + 7, 0, value)
+    let winkelmove = 40;
+    let v_us_move = (winkelmove * 1950 / 180 + 600) // 0.6 ~ 2.4
+    let value_move = v_us_move * 4096 / 20000
+    setPwm(index + 7, 0, value_move)
     basic.pause(ms);
 
-    let winkel = 80;
-    let v_us = (winkel * 1950 / 180 + 600) // 0.6 ~ 2.4
-    let value = v_us * 4096 / 20000
-    setPwm(index + 7, 0, value)
+    winkelmove = 80;
+    v_us_move = (winkelmove * 1950 / 180 + 600) // 0.6 ~ 2.4
+    value_move = v_us_move * 4096 / 20000
+    setPwm(index + 7, 0, value_move)
     // Optional: Servo wieder in eine Ruheposition bringen (zum Beispiel 90°)
     // Servo(servo, 90);
 }
