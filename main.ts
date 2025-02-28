@@ -800,6 +800,29 @@ namespace Robobox {
   }
 
   /*#############################################################################Roboterarm Ende###############################################*/
+
+    /**###################Erweiterungen START
+ * Bewegt den ausgewählten Servo für eine angegebene Zeit (in ms) auf 40°.
+ * @param servo der auszuwählende Servo, z.B. S1, S2, ...; eg: Servos.S1
+ * @param ms Dauer in Millisekunden, z.B. 1000
+ */
+//% blockId=erweiterungen_moveServo block="Bewege Servo %servo für %ms ms auf 40°"
+//% group="Erweiterungen" weight=50
+export function moveServo(index: Servos, ms: number): void {
+    // Setze den Servo auf 40 Grad
+    let winkel = 40;
+    let v_us = (winkel * 1950 / 180 + 600) // 0.6 ~ 2.4
+    let value = v_us * 4096 / 20000
+    setPwm(index + 7, 0, value)
+    basic.pause(ms);
+
+    let winkel = 80;
+    let v_us = (winkel * 1950 / 180 + 600) // 0.6 ~ 2.4
+    let value = v_us * 4096 / 20000
+    setPwm(index + 7, 0, value)
+    // Optional: Servo wieder in eine Ruheposition bringen (zum Beispiel 90°)
+    // Servo(servo, 90);
+}
   
   
  /*#############################################################################Ultraschall Anfang###############################################*/
