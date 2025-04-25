@@ -2,7 +2,7 @@
 Riven
 modified from pxt-servo/servodriver.ts
 load dependency
-"robotbit": "file:../pxt-robotbit"
+"robotbit": "file:../pxt-robotbit-bluetooth"
 */
 const enum DistanceUnit {
     //% block="cm"
