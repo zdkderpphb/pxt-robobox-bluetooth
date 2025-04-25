@@ -5,7 +5,6 @@
         "core": "*",
         "microphone": "*",
         "neopixel": "github:kittenbot/pxt-neopixel",
-        "bluetooth": "*"
     },
     "files": [
         "main.blocks",
