@@ -1,0 +1,31 @@
+name: Build and Deploy PXT Extension
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: Install PXT CLI
+      run: npm install -g pxt
+
+    - name: Install dependencies
+      run: pxt install
+
+    - name: Build Extension
+      run: make build
+
+    - name: Deploy Extension (optional)
+      run: make deploy
