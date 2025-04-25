@@ -5,7 +5,7 @@
         "core": "*",
         "radio": "*",
         "microphone": "*",
-        "neopixel": "github:kittenbot/pxt-neopixel"
+        "neopixel": "github:kittenbot/pxt-neopixel",
         "bluetooth": "*"
     },
     "files": [
