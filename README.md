@@ -4,7 +4,7 @@
 
 > Diese Seite bei [https://zdkderpphb.github.io/pxt-robobox/](https://zdkderpphb.github.io/pxt-robobox/) öffnen
 
-## Als Erweiterung verwenden
+## Als Erweiterung verwenden mit bluetooth
 
 Dieses Repository kann als **Erweiterung** in MakeCode hinzugefügt werden.
 
